@@ -151,6 +151,8 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 
 			$child = array();
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
+				$child['id'] = $row['id'];
+				$child['id'] = str_replace('urn:oid:', 'oid:', $child['id']);
 				$child['id'] = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
 				$child['id'] = str_replace('urn:x-weid:', 'weid:', $child['id']);
 			} else {
@@ -188,7 +190,9 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 
 			// Check if there are more sub OIDs
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
-				$tmp = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
+				$tmp = $row['id'];
+				$tmp = str_replace('urn:oid:', 'oid:', $tmp);
+				$tmp = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($tmp,strlen('oid:')));
 				$tmp = str_replace('urn:x-weid:', 'weid:', $tmp);
 			} else {
 				$tmp = $row['id'];

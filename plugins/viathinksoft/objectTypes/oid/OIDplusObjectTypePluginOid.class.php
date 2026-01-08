@@ -67,6 +67,7 @@ class OIDplusObjectTypePluginOid extends OIDplusObjectTypePlugin
 		// Convert WEID to OID
 		// A WEID is just a different notation of an OID.
 		// To allow that people use OID-IP or the GoTo-box with a "weid:" identifier, rewrite it to "oid:", so that the plugin OIDplusObjectTypePluginOid can handle it.
+		$static_node_id = str_replace('urn:x-weid:', 'weid:', $static_node_id);
 		if (str_starts_with(strtolower($static_node_id), 'weid:')) {
 			$ary = explode('$', $static_node_id, 2);
 			$weid = $ary[0];

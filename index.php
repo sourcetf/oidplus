@@ -46,11 +46,13 @@ if (isset($_REQUEST['h404'])) {
 	}
 }
 
+$static_node_id = str_replace('urn:x-weid:', 'weid:', $static_node_id);
 $static_node_id_original = $static_node_id;
 
 $was_weid = str_starts_with(strtolower($static_node_id), 'weid:');
 $static_node_id = OIDplus::prefilterQuery($static_node_id, false);
 if ($was_weid && class_exists(WeidOidConverter::class)) {
+	$static_node_id = str_replace('urn:oid:', 'oid:', $static_node_id);
 	$static_node_id = (strtolower($static_node_id) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($static_node_id,strlen('oid:')));
 	$static_node_id = str_replace('urn:x-weid:', 'weid:', $static_node_id);
 }

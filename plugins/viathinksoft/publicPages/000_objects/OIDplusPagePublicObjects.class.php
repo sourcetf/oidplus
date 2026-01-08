@@ -604,6 +604,7 @@ class OIDplusPagePublicObjects extends OIDplusPagePluginPublic
 		// For the root objects, let the user also enter a WEID
 		if ($objParent::ns() == 'oid') {
 			assert($objParent instanceof OIDplusOid); //assert(get_class($objParent) === "ViaThinkSoft\OIDplus\Plugins\ObjectTypes\OID\OIDplusOid");
+			$params['id'] = str_replace('urn:x-weid:', 'weid:', $params['id']);
 			if (strtolower(substr(trim($params['id']),0,5)) === 'weid:') {
 				if ($objParent->isRoot()) {
 					$params['id'] = WeidOidConverter::weid2oid($params['id']);
@@ -929,10 +930,10 @@ class OIDplusPagePublicObjects extends OIDplusPagePluginPublic
 
 			// --- Try to find the object or an alternative
 
+			$id = str_replace('urn:x-weid:', 'weid:', $id);
 			if (str_starts_with(strtolower($id), 'weid:') && class_exists(WeidOidConverter::class)) {
 				// https://github.com/danielmarschall/oidplus/issues/84
-				$raw_weid = substr($id,strlen('weid:'));
-				$id = 'oid:'.WeidOidConverter::weid2oid($raw_weid);
+				$id = 'oid:'.WeidOidConverter::weid2oid($id);
 			}
 
 			$test = $this->tryObject($id, $out);
