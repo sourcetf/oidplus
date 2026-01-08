@@ -4,7 +4,7 @@
 /**
 * WEID<=>OID Converter
 * (c) Webfan.de, ViaThinkSoft
-* Revision 2025-01-06
+* Revision 2025-12-28
 **/
 
 // What is a WEID?
@@ -15,32 +15,24 @@
 //
 // The full specification can be found here: https://co.weid.info/spec.html
 //
-// This converter supports WEID as of Spec Change #15
+// This converter supports WEID as of Spec Change #16
 //
 // A few short notes:
-//     - There are several classes of WEIDs which have different OID bases:
-//           "Class A" WEID:          weid:root:2-RR-?
-//                                    oid:2.999
-//                                    WEID class base OID: (OID Root)
-//           "Class B" PEN WEID:      weid:pen:SX0-7PR-?
-//                                    oid:1.3.6.1.4.1.37476.9999
-//                                    WEID class base OID: 1.3.6.1.4.1
-//           "Class B" UUID WEID:     weid:uuid:019433d5-535f-7098-9e0b-f7b84cf74da3:SX0-?
-//                                    oid:2.25.2098739235139107623796528785225371043.37476
-//                                    WEID class base OID: 2.25.<uuid>
-//           "Class C" WEID:          weid:EXAMPLE-?
+//     - Examples of various WEID/OID mappings:
+//           Regular WEID:            weid:EXAMPLE-?
 //                                    oid:1.3.6.1.4.1.37553.8.32488192274
-//                                    WEID class base OID: 1.3.6.1.4.1.37553.8
-//           "Class D" Domain WEID:   weid:example.com:TEST-? is equal to weid:9-DNS-COM-EXAMPLE-TEST-?
-//                                    Since the check digit is based on the OID, the check digit is equal for both notations.
-//                                    oid:1.3.6.1.4.1.37553.8.9.17704.32488192274.16438.1372205
-//                                    WEID class base OID: 1.3.6.1.4.1.37553.8.9.17704
+//           OID WEID:                weid:O-2-RR-?
+//                                    oid:2.999
+//           PEN-OID WEID:            weid:P-SX0-7PR-?
+//                                    oid:1.3.6.1.4.1.37476.9999
+//           UUID WEID:               weid:U-3D576PEXUZ1EVVF3MKRKOTYB-7PR-?
+//                                    oid:2.25.2098739235139107623796528785225371043.9999
+//           DNS WEID:                weid:D-COM-EXAMPLE-7PR-?
+//                                    oid:1.3.6.1.4.1.37553.8.13.16438.32488192274.9999
 //     - The last arc in a WEID is the check digit. A question mark is the wildcard for an unknown check digit.
 //       In this case, the converter will return the correct expected check digit for the input.
-//     - The namespace (weid:, weid:pen:, weid:root:) is case insensitive.
-//     - Padding with '0' characters is valid (e.g. weid:000EXAMPLE-3)
-//       The paddings do not count into the WeLuhn check digit.
-//     - URN Notation "urn:x-weid:..." is equal to "weid:..."
+//     - The namespace (urn:x-weid:) is case insensitive. The URN Notation "urn:x-weid:..." is equal to "weid:...".
+//     - Padding with '0' characters is valid (e.g. weid:000EXAMPLE-3) but not recommended. The paddings do not count into the WeLuhn check digit.
 //
 
 var WeidOidConverter = {
@@ -87,6 +79,8 @@ var WeidOidConverter = {
 	oidSanitize: function(oid) {
 		var oid = oid.trim();
 
+		oid = oid.replace(/^urn:oid:/i, '');
+
 		if (oid.substr(0,1) == '.') oid = oid.substr(1); // remove leading dot
 
 		if (oid != '') {
@@ -126,7 +120,7 @@ var WeidOidConverter = {
 	weid2oid: function(weid) {
 		var weid = weid.trim();
 
-		weid = weid.replace(/^urn:x-weid:/, 'weid:'); // Spec Change 12 (URN)
+		weid = weid.replace(/^urn:x-weid:/i, 'weid:'); // Spec Change 12 (URN)
 
 		var p = weid.lastIndexOf(':');
 		var namespace = weid.substr(0, p+1);
@@ -146,7 +140,7 @@ var WeidOidConverter = {
 			if (!tmp) return false;
 			var checksum = tmp["weid"].split("-").reverse()[0];
 			var weid = weid.substr(0,weid.length-1) + checksum; // fix wildcard checksum if required
-			return { "weid": weid, "oid" : tmp["oid"] };
+			return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid" : tmp["oid"] };
 		} else if (namespace.startsWith("weid:uuid:")) {
 			// Spec Change 13: Class B UUID WEID ( https://github.com/WEID-Consortium/weid.info/issues/1 )
 			if (weid.split(":").length != 4) return false;
@@ -159,7 +153,7 @@ var WeidOidConverter = {
 			if (!tmp) return false;
 			var checksum = tmp["weid"].split("-").reverse()[0];
 			var weid = weid.substr(0,weid.length-1) + checksum; // fix wildcard checksum if required
-			return { "weid": weid, "oid" : tmp["oid"] };
+			return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid" : tmp["oid"] };
 		}
 
 		if (namespace.startsWith("weid:")) {
@@ -174,13 +168,13 @@ var WeidOidConverter = {
 				if (!tmp) return false;
 				var checksum = tmp["weid"].split("-").reverse()[0];
 				var weid = weid.substr(0,weid.length-1) + checksum; // fix wildcard checksum if required
-				return { "weid": weid, "oid" : tmp["oid"] };
+				return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid" : tmp["oid"] };
 			}
 		}
 
 		if (namespace.startsWith('weid:x-')) {
 			// Spec Change 11: Proprietary Namespaces ( https://github.com/frdl/weid/issues/4 )
-			return { "weid": weid, "oid" : "[Proprietary WEID Namespace]" };
+			return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid" : "[Proprietary WEID Namespace]" };
 		} else if (namespace == 'weid:') {
 			// Class C
 			base = '1-3-6-1-4-1-SZ5-8';
@@ -198,7 +192,7 @@ var WeidOidConverter = {
 			if (!tmp) return false;
 			var checksum = tmp["weid"].split("-").reverse()[0];
 			var weid = weid.substr(0,weid.length-1) + checksum; // fix wildcard checksum if required
-			return { "weid": weid, "oid" : tmp["oid"] };
+			return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid" : tmp["oid"] };
 		} else if (namespace == 'weid:root:') {
 			// Class A
 			base = '';
@@ -235,12 +229,19 @@ var WeidOidConverter = {
 		});
 		var oid = elements.join('.');
 
+        // (Spec Change 16) urn:x-weid:O-? is usually mapped to 1.3.6.1.4.1.37553.8.24, however, there will be a redirection to the OID tree root.
+        oid = oid.replace(/^1\.3\.6\.1\.4\.1\.37553\.8\.24(\.|$)/, '')
+        // (Spec Change 16) urn:x-weid:P-? is usually mapped to 1.3.6.1.4.1.37553.8.25, however, there will be a redirection to OID 1.3.6.1.4.1.
+        oid = oid.replace(/^1\.3\.6\.1\.4\.1\.37553\.8\.25(\.|$)/, '1.3.6.1.4.1$1')
+        // (Spec Change 16) urn:x-weid:U-9-? is usually mapped to 1.3.6.1.4.1.37553.8.30, however, there will be a redirection to OID 2.25.
+        oid = oid.replace(/^1\.3\.6\.1\.4\.1\.37553\.8\.30(\.|$)/, '2.25$1')
+
 		weid = namespace.toLowerCase() + weid.toUpperCase(); // add namespace again
 
 		oid = WeidOidConverter.oidSanitize(oid);
 		if (oid === false) return false; // invalid OID
 
-		return { "weid": weid, "oid" : oid };
+		return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid" : oid };
 	},
 
 	// Converts an OID to WEID
@@ -265,16 +266,27 @@ var WeidOidConverter = {
 		var is_class_b_uuid = (weidstr.startsWith('2-P-') || (weidstr == '2-P'));
 		var is_class_a      = !is_class_b_pen && !is_class_b_uuid && !is_class_c;
 
+		// Deprecated as of Spec Change 16:
+		/*
 		var checksum = WeidOidConverter.weLuhnCheckDigit(weidstr);
+		*/
 
 		var namespace = null;
 		if (is_class_c) {
 			weidstr = weidstr.substr('1-3-6-1-4-1-SZ5-8-'.length);
 			namespace = 'weid:';
 		} else if (is_class_b_pen) {
+			// Deprecated as of Spec Change 16:
+			/*
 			weidstr = weidstr.substr('1-3-6-1-4-1-'.length);
 			namespace = 'weid:pen:';
+			*/
+			// Recommended as of Spec Change 16:
+			weidstr = 'P' + weidstr.substr('1-3-6-1-4-1'.length);
+			namespace = 'weid:';			
 		} else if (is_class_b_uuid) {
+			// Deprecated as of Spec Change 16:
+			/*
 			if (weidstr == '2-P') {
 				// Spec Change 14: Special case: OID 2.25 is weid:uuid:?
 				weidstr = '';
@@ -285,18 +297,31 @@ var WeidOidConverter = {
 				weidstr = weidstr.substr('2-P-'.length + uuid_base36.length + '-'.length);
 				namespace = 'weid:uuid:' + WeidOidConverter.formatAsUUID(WeidOidConverter.base_convert_bigint(uuid_base36, 36, 16)) + ':';
 			}
+			*/
+			// Recommended as of Spec Change 16:
+			weidstr = 'U' + weidstr.substr('2-U'.length);
+			namespace = 'weid:';			
 		} else if (is_class_a) {
-			// weidstr stays
+			// Deprecated as of Spec Change 16:
+			/*
+			weidstr = weidstr;
 			namespace = 'weid:root:';
+			*/
+			// Recommended as of Spec Change 16:
+			weidstr = weidstr == '' ? 'O' : 'O-' + weidstr;
+			namespace = 'weid:';			
 		} else {
 			// should not happen
 			console.error("oid2weid: Cannot detect namespace");
 			return false;
 		}
 
+		// Recommended as of Spec Change 16:
+		var checksum = WeidOidConverter.weLuhnCheckDigit('1-3-6-1-4-1-SZ5-8-' + weidstr);
+
 		var weid = namespace + (weidstr == '' ? checksum : weidstr + '-' + checksum);
 
-		return { "weid": weid, "oid": oid };
+		return { "weid": weid.replace(/^weid:/i, 'urn:x-weid:'), "oid": oid };
 	},
 
 	formatAsUUID: function(input) {

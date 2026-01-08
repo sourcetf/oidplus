@@ -188,7 +188,7 @@ class OIDplusOid extends OIDplusObject {
 		$tech_info[$tmp] = $this->getIriNotation();
 
 		$tmp = _L('WEID notation');
-		$tmp = str_replace(explode(' ', $tmp, 2)[0], '<a href="https://weid.info/spec.html" target="_blank">'.explode(' ', $tmp, 2)[0].'</a>', $tmp);
+		$tmp = str_replace(explode(' ', $tmp, 2)[0], '<a href="https://co.weid.info/spec.html" target="_blank">'.explode(' ', $tmp, 2)[0].'</a>', $tmp);
 		$tech_info[$tmp] = $this->getWeidNotation(true);
 
 		$tmp = _L('DER encoding');
@@ -306,18 +306,25 @@ class OIDplusOid extends OIDplusObject {
 	 * @return string
 	 */
 	public function getWeidNotation(bool $withAbbr=true): string {
-		$weid = (strtolower($this->getDotNotation()) == 'oid:') ? 'weid:' : WeidOidConverter::oid2weid($this->getDotNotation());
+		$weid = (strtolower($this->getDotNotation()) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid($this->getDotNotation());
+		$weid = str_replace('urn:x-weid:', 'weid:', $weid);
 		if ($withAbbr) {
 			$ary = explode(':', $weid);
 			$weid = array_pop($ary); // remove namespace and sub-namespace if existing
 			$ns = implode(':', $ary).':';
-
 			$weid_arcs = explode('-', $weid);
+
+			// These alt OID is made to make sure that the numeric value of O/U/P is correctly set in the mouse-hover-label
+			$oid = $this->oid;
+			$oid = preg_replace('@^1\\.3\\.6\\.1\\.4\\.1(\\.|$)@', '1.3.6.1.4.1.37553.25\\1', $oid); // weid:P-?
+			$oid = preg_replace('@^2\\.25(\\.|$)@', '1.3.6.1.4.1.37553.30\\1', $oid); // weid:U-?
+			$oid = '1.3.6.1.4.1.37553.24.'.$oid; // weid:O-?
+
 			foreach ($weid_arcs as $i => &$weid) {
 				if ($i == count($weid_arcs)-1) {
 					$weid = '<abbr title="'._L('weLuhn check digit').'">'.$weid.'</abbr>';
 				} else {
-					$oid_arcs = explode('.',$this->oid);
+					$oid_arcs = explode('.',$oid);
 					$weid_num = $oid_arcs[(count($oid_arcs)-1)-(count($weid_arcs)-1)+($i+1)];
 					if ($weid_num != $weid) {
 						$weid = '<abbr title="'._L('Numeric value').': '.$weid_num.'">'.$weid.'</abbr>';

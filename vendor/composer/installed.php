@@ -99,7 +99,7 @@
         'danielmarschall/uuid_mac_utils' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '8b35309889a0192f3a6065f11fd29ea54bf58c32',
+            'reference' => '80fdd1d6d9176ec09a842d467e24d6f15bb2e74b',
             'type' => 'library',
             'install_path' => __DIR__ . '/../danielmarschall/uuid_mac_utils',
             'aliases' => array(
@@ -195,7 +195,7 @@
         'phpseclib/phpseclib' => array(
             'pretty_version' => '3.0.x-dev',
             'version' => '3.0.9999999.9999999-dev',
-            'reference' => '816729d6a9fb78625f878c8283ff6d7cbc77db0d',
+            'reference' => '26f567d43b51391df1e3b75011717b63b79bcb27',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpseclib/phpseclib',
             'aliases' => array(),
@@ -240,20 +240,18 @@
             'dev_requirement' => false,
         ),
         'tinymce/tinymce' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '7dcce3851a3c9bec77b73a303c62784a98758d3d',
+            'pretty_version' => '8.3.1',
+            'version' => '8.3.1.0',
+            'reference' => 'd611e7b064eab7808a0d8d581776c5884a5b687a',
             'type' => 'component',
             'install_path' => __DIR__ . '/../tinymce/tinymce',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
+            'aliases' => array(),
             'dev_requirement' => false,
         ),
         'twbs/bootstrap' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '6ad25a7102bbcea048f076dbb140a2ee667292d0',
+            'reference' => 'c82919e8970c7ebebb87ded191b815c76737cd04',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twbs/bootstrap',
             'aliases' => array(

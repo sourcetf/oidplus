@@ -125,7 +125,8 @@ try {
 
 			if ($was_weid && is_array($json_out) && class_exists(WeidOidConverter::class)) {
 				foreach ($json_out as &$o) {
-					$o = (strtolower($o) == 'oid:') ? 'weid:' : WeidOidConverter::oid2weid(substr($o,strlen('oid:')));
+					$o = (strtolower($o) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($o,strlen('oid:')));
+					$o = str_replace('urn:x-weid:', 'weid:', $o);
 				}
 			}
 
@@ -144,7 +145,8 @@ try {
 			$_REQUEST['id'] = OIDplus::prefilterQuery($_REQUEST['id'], false);
 
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
-				$_REQUEST['id'] = (strtolower($_REQUEST['id']) == 'oid:') ? 'weid:' : WeidOidConverter::oid2weid(substr($_REQUEST['id'],strlen('oid:')));
+				$_REQUEST['id'] = (strtolower($_REQUEST['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($_REQUEST['id'],strlen('oid:')));
+				$_REQUEST['id'] = str_replace('urn:x-weid:', 'weid:', $_REQUEST['id']);
 			}
 
 			$json_out = OIDplus::menuUtils()->json_tree($_REQUEST['id'], $_REQUEST['goto'] ?? '');

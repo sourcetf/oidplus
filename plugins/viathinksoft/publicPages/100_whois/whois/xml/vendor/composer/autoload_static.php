@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInitOidPlusWhoisXml
 {
     public static $prefixLengthsPsr4 = array (
-        'R' => 
+        'R' =>
         array (
             'RobRichards\\XMLSecLibs\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'RobRichards\\XMLSecLibs\\' => 
+        'RobRichards\\XMLSecLibs\\' =>
         array (
             0 => __DIR__ . '/..' . '/robrichards/xmlseclibs/src',
         ),

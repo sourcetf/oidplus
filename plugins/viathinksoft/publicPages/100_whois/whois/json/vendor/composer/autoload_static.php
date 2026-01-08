@@ -7,22 +7,22 @@ namespace Composer\Autoload;
 class ComposerStaticInitOidPlusWhoisJson
 {
     public static $prefixLengthsPsr4 = array (
-        'a' => 
+        'a' =>
         array (
             'aywan\\JsonCanonicalization\\' => 27,
         ),
-        'S' => 
+        'S' =>
         array (
             'SBrook\\' => 7,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'aywan\\JsonCanonicalization\\' => 
+        'aywan\\JsonCanonicalization\\' =>
         array (
             0 => __DIR__ . '/..' . '/aywan/php-json-canonicalization/src',
         ),
-        'SBrook\\' => 
+        'SBrook\\' =>
         array (
             0 => __DIR__ . '/..' . '/sergeybrook/php-jws/src',
         ),

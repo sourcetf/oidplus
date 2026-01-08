@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'robrichards/xmlseclibs' => array(
-            'pretty_version' => '3.1.3',
-            'version' => '3.1.3.0',
-            'reference' => '2bdfd742624d739dfadbd415f00181b4a77aaf07',
+            'pretty_version' => '3.1.4',
+            'version' => '3.1.4.0',
+            'reference' => 'bc87389224c6de95802b505e5265b0ec2c5bcdbd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../robrichards/xmlseclibs',
             'aliases' => array(),

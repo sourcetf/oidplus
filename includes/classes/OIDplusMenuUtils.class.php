@@ -151,7 +151,8 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 
 			$child = array();
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
-				$child['id'] = (strtolower($row['id']) == 'oid:') ? 'weid:' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
+				$child['id'] = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
+				$child['id'] = str_replace('urn:x-weid:', 'weid:', $child['id']);
 			} else {
 				$child['id'] = $row['id'];
 			}
@@ -169,13 +170,7 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 				} else {
 					$bry = explode('.', $row['id']);
 					$last_arc = $bry[count($bry)-1];
-					if (strtolower($parent) == 'oid:2.25') {
-						$uuid = oid_to_uuid('2.25.'.$last_arc);
-						if ($uuid === false) $uuid = _L('Invalid UUID');
-						$child['text'] = $uuid;
-					} else {
-						$child['text'] = WeidOidConverter::encodeSingleArc($last_arc);
-					}
+					$child['text'] = WeidOidConverter::encodeSingleArc($last_arc);
 				}
 			} else {
 				$child['text'] = $obj->jsTreeNodeName($parentObj);
@@ -193,10 +188,12 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 
 			// Check if there are more sub OIDs
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
-				$tmp = (strtolower($row['id']) == 'oid:') ? 'weid:' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
+				$tmp = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
+				$tmp = str_replace('urn:x-weid:', 'weid:', $tmp);
 			} else {
 				$tmp = $row['id'];
 			}
+
 			if (($parent == 'urn:') && class_exists(OIDplusPagePublicObjects::class) && OIDplusPagePublicObjects::urnViewEnabled()) {
 				// For URNs, open to the 2nd level
 				$child['children'] = $this->tree_populate($tmp, $goto_path);

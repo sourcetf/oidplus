@@ -380,18 +380,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielmarschall/uuid_mac_utils.git",
-                "reference": "8b35309889a0192f3a6065f11fd29ea54bf58c32"
+                "reference": "80fdd1d6d9176ec09a842d467e24d6f15bb2e74b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielmarschall/uuid_mac_utils/zipball/8b35309889a0192f3a6065f11fd29ea54bf58c32",
-                "reference": "8b35309889a0192f3a6065f11fd29ea54bf58c32",
+                "url": "https://api.github.com/repos/danielmarschall/uuid_mac_utils/zipball/80fdd1d6d9176ec09a842d467e24d6f15bb2e74b",
+                "reference": "80fdd1d6d9176ec09a842d467e24d6f15bb2e74b",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4"
             },
-            "time": "2025-06-16T21:18:29+00:00",
+            "time": "2025-12-21T14:20:15+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -831,12 +831,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "816729d6a9fb78625f878c8283ff6d7cbc77db0d"
+                "reference": "26f567d43b51391df1e3b75011717b63b79bcb27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/816729d6a9fb78625f878c8283ff6d7cbc77db0d",
-                "reference": "816729d6a9fb78625f878c8283ff6d7cbc77db0d",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/26f567d43b51391df1e3b75011717b63b79bcb27",
+                "reference": "26f567d43b51391df1e3b75011717b63b79bcb27",
                 "shasum": ""
             },
             "require": {
@@ -854,7 +854,7 @@
                 "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
                 "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
             },
-            "time": "2025-10-29T05:29:33+00:00",
+            "time": "2026-01-08T15:52:22+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1121,21 +1121,20 @@
         },
         {
             "name": "tinymce/tinymce",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
+            "version": "8.3.1",
+            "version_normalized": "8.3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tinymce/tinymce-dist.git",
-                "reference": "7dcce3851a3c9bec77b73a303c62784a98758d3d"
+                "reference": "d611e7b064eab7808a0d8d581776c5884a5b687a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/7dcce3851a3c9bec77b73a303c62784a98758d3d",
-                "reference": "7dcce3851a3c9bec77b73a303c62784a98758d3d",
+                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/d611e7b064eab7808a0d8d581776c5884a5b687a",
+                "reference": "d611e7b064eab7808a0d8d581776c5884a5b687a",
                 "shasum": ""
             },
-            "time": "2025-10-23T01:11:24+00:00",
-            "default-branch": true,
+            "time": "2025-12-17T00:53:22+00:00",
             "type": "component",
             "extra": {
                 "component": {
@@ -1159,7 +1158,7 @@
             "installation-source": "dist",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0-or-later"
+                "SEE LICENSE IN license.md"
             ],
             "description": "Web based JavaScript HTML WYSIWYG editor control.",
             "homepage": "https://www.tiny.cloud/",
@@ -1178,7 +1177,7 @@
                 "wysiwyg"
             ],
             "support": {
-                "source": "https://github.com/tinymce/tinymce-dist/tree/8.2.0"
+                "source": "https://github.com/tinymce/tinymce-dist/tree/8.3.1"
             },
             "install-path": "../tinymce/tinymce"
         },
@@ -1189,18 +1188,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "6ad25a7102bbcea048f076dbb140a2ee667292d0"
+                "reference": "c82919e8970c7ebebb87ded191b815c76737cd04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6ad25a7102bbcea048f076dbb140a2ee667292d0",
-                "reference": "6ad25a7102bbcea048f076dbb140a2ee667292d0",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/c82919e8970c7ebebb87ded191b815c76737cd04",
+                "reference": "c82919e8970c7ebebb87ded191b815c76737cd04",
                 "shasum": ""
             },
             "replace": {
                 "twitter/bootstrap": "self.version"
             },
-            "time": "2025-11-01T10:09:11+00:00",
+            "time": "2025-12-27T19:19:55+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
