@@ -27,7 +27,7 @@ curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 if (!($res = @curl_exec($ch))) {
 	die("Calling AJAX.PHP failed: " . curl_error($ch));
 }
-curl_close($ch);
+if (version_compare(PHP_VERSION, '8.5.0') < 0) curl_close($ch);
 
 $json = json_decode("$res", true);
 

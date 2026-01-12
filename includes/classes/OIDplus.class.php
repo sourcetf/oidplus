@@ -1021,7 +1021,7 @@ class OIDplus extends OIDplusBaseClass {
 		}
 
 		// Sort the plugins by their type and name, as if they would be in a single vendor-folder!
-		uasort($ary, function($a,$b) { /* @phpstan-ignore-line */ // Weird message which I don't understand: Parameter #1 $array of function uasort contains unresolvable type.
+		uasort($ary, function($a,$b) {
 			if ($a == $b) return 0;
 
 			$a = str_replace('\\', '/', $a);
@@ -1430,18 +1430,18 @@ class OIDplus extends OIDplusBaseClass {
 			foreach ($http_headers as $name => $val) {
 
 				// Plugins can remove standard OIDplus headers by setting the value to null.
-				if (is_null($val)) continue; /* @phpstan-ignore-line */
+				if (is_null($val)) continue;
 
 				// Some headers can be written as arrays to make it easier for plugin authors
 				// to manipulate/extend the contents.
-				if (is_array($val)) { /* @phpstan-ignore-line */
+				if (is_array($val)) {
 					if ((strtolower($name) == 'cache-control') ||
 						(strtolower($name) == 'referrer-policy'))
 					{
-						if (count($val) == 0) continue; /* @phpstan-ignore-line */
+						if (count($val) == 0) continue;
 						$val = implode(', ', $val);
 					} else if (strtolower($name) == 'content-security-policy') {
-						if (count($val) == 0) continue; /* @phpstan-ignore-line */
+						if (count($val) == 0) continue;
 						foreach ($val as $tmp1 => &$tmp2) {
 							$tmp2 = array_unique($tmp2);
 							$tmp2 = $tmp1.' '.implode(' ', $tmp2);
@@ -1452,7 +1452,7 @@ class OIDplus extends OIDplusBaseClass {
 					}
 				}
 
-				if (is_string($val)) { /* @phpstan-ignore-line */
+				if (is_string($val)) {
 					@header("$name: $val");
 				}
 			}
@@ -2380,7 +2380,7 @@ class OIDplus extends OIDplusBaseClass {
 					glob(__DIR__.'/../../plugins/'.'*'.'/language/'.$lang.'/'.$wildcard),
 					glob(self::getUserDataDir("plugins", true).'*'.'/language/'.$lang.'/'.$wildcard)
 				);
-				sort($translation_files); /* @phpstan-ignore-line */ // Weird message which I don't understand: Parameter #1 $array of function sort contains unresolvable type.
+				sort($translation_files);
 				foreach ($translation_files as $translation_file) {
 					if (!file_exists($translation_file)) continue;
 					$cac = self::getTranslationFileContents($translation_file);

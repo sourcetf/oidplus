@@ -61,8 +61,8 @@ Example:
 ```php
 if (true) {
 	$test = execute_sql("select * ".
-			    "from test ".
-			    "where id=1");
+	                    "from test ".
+	                    "where id=1");
 }
 ```
 

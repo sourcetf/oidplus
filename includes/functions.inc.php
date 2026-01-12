@@ -401,7 +401,7 @@ function url_post_contents(string $url, array $params=array(), array $extraHeade
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 		$res = @curl_exec($ch);
 		$error_code = @curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		@curl_close($ch);
+		if (version_compare(PHP_VERSION, '8.5.0') < 0) @curl_close($ch);
 		if ($error_code >= 400) return false;
 		if ($res === false) return false;
 	} else {
@@ -475,7 +475,7 @@ function url_get_contents(string $url, array $extraHeaders=array(), string $user
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 		$res = @curl_exec($ch);
 		$error_code = @curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		@curl_close($ch);
+		if (version_compare(PHP_VERSION, '8.5.0') < 0) @curl_close($ch);
 		if ($error_code >= 400) return false;
 		if ($res === false) return false;
 	} else {

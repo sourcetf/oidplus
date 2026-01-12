@@ -44,7 +44,7 @@ curl_setopt($ch, CURLOPT_NOBODY, TRUE); // remove body
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $head = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
+if (version_compare(PHP_VERSION, '8.5.0') < 0) curl_close($ch);
 
 if ($httpCode != 0) {
 	echo '<p><font color="green">CURL to HTTPS works!</font></p>';
