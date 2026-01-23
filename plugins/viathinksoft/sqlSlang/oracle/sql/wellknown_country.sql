@@ -7,6 +7,8 @@ INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:1.2.40',
 INSERT INTO "IRI" (oid, name, longarc, well_known) VALUES ('oid:1.2.40', 'AT', '0', '1');
 INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:1.2.56', 'be', '0', '1');
 INSERT INTO "IRI" (oid, name, longarc, well_known) VALUES ('oid:1.2.56', 'BE', '0', '1');
+INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:1.2.112', 'by', '0', '1');
+INSERT INTO "IRI" (oid, name, longarc, well_known) VALUES ('oid:1.2.112', 'BY', '0', '1');
 INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:1.2.124', 'ca', '0', '1');
 INSERT INTO "IRI" (oid, name, longarc, well_known) VALUES ('oid:1.2.124', 'CA', '0', '1');
 INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:1.2.156', 'cn', '0', '1');
@@ -858,4 +860,4 @@ INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:2.49.0.1
 INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:2.49.0.0.894', 'zm', '0', '1');
 INSERT INTO "ASN1ID" (oid, name, standardized, well_known) VALUES ('oid:2.49.0.1.894', 'zm', '0', '1');
 
--- Generator "generate_wellknown_country_oracle" checksum a6773051
+-- Generator "generate_wellknown_country_oracle" checksum 175e26c8

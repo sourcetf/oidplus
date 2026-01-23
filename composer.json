@@ -1,7 +1,7 @@
 {
     "name": "danielmarschall/oidplus",
     "description": "OIDplus 2.0",
-    "version": "2.0.2.16",
+    "version": "2.0.2.17",
     "type": "project",
     "homepage": "https://www.oidplus.com/",
     "authors": [
@@ -131,8 +131,7 @@
             "*": "dist"
         },
         "autoloader-suffix": "OidPlusComposer",
-        "platform": {
-        }
+        "platform": []
     },
     "scripts": {
         "post-update-cmd": [

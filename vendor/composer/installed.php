@@ -240,9 +240,9 @@
             'dev_requirement' => false,
         ),
         'tinymce/tinymce' => array(
-            'pretty_version' => '8.3.1',
-            'version' => '8.3.1.0',
-            'reference' => 'd611e7b064eab7808a0d8d581776c5884a5b687a',
+            'pretty_version' => '8.3.2',
+            'version' => '8.3.2.0',
+            'reference' => '4b043a865f1978056f6649638b2e983c0624ff66',
             'type' => 'component',
             'install_path' => __DIR__ . '/../tinymce/tinymce',
             'aliases' => array(),

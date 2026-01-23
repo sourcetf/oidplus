@@ -3,6 +3,15 @@
 		"dummy": "<?php die('For security reasons, this file can only be accessed locally (without PHP).'.base64_decode('IgogICAgfQpdCg==')); ?>"
 	},
 	{
+		"version": "2.0.2.17",
+		"date": "2026-01-23 20:50:00 +0100",
+		"author": "Daniel Marschall (ViaThinkSoft)",
+		"changes": [
+			"Various fixes and small improvements",
+			"Support for WEID Spec Change 16"
+		]
+	},
+	{
 		"version": "2.0.2.16",
 		"date": "2025-10-01 23:55:00 +0200",
 		"author": "Daniel Marschall (ViaThinkSoft)",

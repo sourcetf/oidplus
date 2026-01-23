@@ -37,7 +37,7 @@ spamspan/spamspan                master master       GPL-2.0-only
 spomky-labs/php-punycode         9999999-dev d12fe5c MIT                       
 spomky-labs/php-punycode         dev-master d12fe5c  MIT                       
 symfony/polyfill-mbstring        1.x-dev 6d857f4     MIT                       
-tinymce/tinymce                  8.3.1               SEE LICENSE IN license.md 
+tinymce/tinymce                  8.3.2               SEE LICENSE IN license.md 
 twbs/bootstrap                   9999999-dev c82919e MIT                       
 twbs/bootstrap                   dev-main c82919e    MIT                       
 tweeb/tinymce-i18n               9999999-dev 058da08 MIT                       
