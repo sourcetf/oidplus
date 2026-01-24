@@ -350,7 +350,7 @@ $(document).ready(function () {
 			'data' : {
 				"url" : getTreeLoadURL(),
 				"data" : function (node) {
-					return { "id" : node.id };
+					return { "id" : node.id.split("|")[0] };
 				}
 			},
 			"multiple": false /* do not allow multiple selections */
@@ -387,7 +387,7 @@ $(document).ready(function () {
 	.on('select_node.jstree', function (node, selected, event) {
 		mobileNavClose();
 
-		var id = selected.node.id;
+		var id = selected.node.id.split("|")[0];
 		if ((!popstate_running) && (current_node != id)) {
 			// 4th argument: we force the reload (because in the
 			// conditional select above, we already asked if

@@ -153,10 +153,15 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
 				$child['id'] = $row['id'];
 				$child['id'] = str_replace('urn:oid:', 'oid:', $child['id']);
-				$child['id'] = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
-				$child['id'] = str_replace('urn:x-weid:', 'weid:', $child['id']);
+				// Force class A (O-1-3-6...) in order to make sure there is never an ID conflict in the tree
+				$safe_text = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')),"A");
+				$safe_text = str_replace('urn:x-weid:', 'weid:', $safe_text);
+				$hf_text = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')),"");
+				$hf_text = str_replace('urn:x-weid:', 'weid:', $hf_text);
+				$child['id'] = $hf_text . '|' . $safe_text; // Appending "safe text" (Class A WEID) makes sure there is no ID conflict in the tree. oidplus_base.js will strip it away.
 			} else {
 				$child['id'] = $row['id'];
+				$hf_text = $row['id'];
 			}
 
 			// Determine display name (relative OID)
@@ -165,9 +170,9 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 			} else if ($was_weid && class_exists(WeidOidConverter::class)) {
 				if (strtolower($parent) == 'oid:') {
 					if (class_exists(OIDplusPagePublicObjects::class) && OIDplusPagePublicObjects::urnViewEnabled()) {
-						$child['text'] = substr($child['id'],strlen('weid:')/*remove prefix*/,-2/*remove checksum*/);
+						$child['text'] = substr($hf_text,strlen('weid:')/*remove prefix*/,-2/*remove checksum*/);
 					} else {
-						$child['text'] = substr($child['id'],0,-2/*remove checksum*/);
+						$child['text'] = substr($hf_text,0,-2/*remove checksum*/);
 					}
 				} else {
 					$bry = explode('.', $row['id']);
