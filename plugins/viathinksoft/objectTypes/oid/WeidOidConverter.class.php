@@ -3,7 +3,7 @@
 /**
 * WEID<=>OID Converter
 * (c) Webfan.de, ViaThinkSoft
-* Revision 2025-12-28
+* Revision 2026-01-24
 **/
 
 // What is a WEID?
@@ -43,6 +43,8 @@ class WeidOidConverter {
 	 * @return false|int
 	 */
 	protected static function weLuhnGetCheckDigit(string $str) {
+		$str = rtrim($str,'-');
+
 		// Padding zeros don't count to the check digit (December 2021)
 		$ary = explode('-', $str);
 		foreach ($ary as &$a) {
@@ -399,7 +401,6 @@ class WeidOidConverter {
 		return $result;
 	}
 }
-
 
 # --- Usage Example ---
 
