@@ -1368,8 +1368,7 @@ class OIDplus extends OIDplusBaseClass {
 						"'unsafe-inline'",
 						"'unsafe-eval'",
 						"blob:",
-						"https://cdnjs.cloudflare.com/",
-						"https://polyfill.io/"
+						"https://cdnjs.cloudflare.com/"
 					),
 					// script-src-elem not used
 					// script-src-attr not used
