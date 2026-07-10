@@ -46,10 +46,12 @@ class OIDplusPagePublicRdap extends OIDplusPagePluginPublic
 	public function modifyContent(string $id, string &$title, string &$icon, string &$text): void {
 		$ary = explode(':', $id, 2);
 		$ns = $ary[0];
-		$id = $ary[1] ?? null;
-		$payload = '<br /> <a href="'.OIDplus::webpath(null).
-		           'rdap/'.urlencode($ns).'/'.urlencode($id).'" class="gray_footer_font" target="_blank">'._L('RDAP').'</a>';
-		$text = str_replace('<!-- MARKER 6 -->', '<!-- MARKER 6 -->'.$payload, $text);
+		$id = $ary[1] ?? '';
+		if ($id != '') { // TODO: should we also allow querying the root of the OID tree, like we do in OID-IP?
+			$payload = '<br /> <a href="'.OIDplus::webpath(null).
+			           'rdap/'.urlencode($ns).'/'.urlencode($id).'" class="gray_footer_font" target="_blank">'._L('RDAP').'</a>';
+			$text = str_replace('<!-- MARKER 6 -->', '<!-- MARKER 6 -->'.$payload, $text);
+		}
 	}
 
 	/**
