@@ -183,3 +183,16 @@ dev/minify_js.sh vendor/spamspan/spamspan/spamspan.js > vendor/spamspan/spamspan
 dev/minify_js.sh vendor/emn178/js-sha3/src/sha3.js > vendor/emn178/js-sha3/src/sha3.min.js
 dev/minify_js.sh vendor/script47/bs5-utils/dist/js/Bs5Utils.js > vendor/script47/bs5-utils/dist/js/Bs5Utils.min.js
 
+# oid-base.com sets short-lived constraints on 1.3.6.1.4.1, but since OIDplus does not update its vendor files too often
+# new PEN users might fall in that constraint. Lower the constraint for OIDplus users by setting it to 1.3.6.1.4.1.(999999+) as illegal.
+perl -pe '
+if (/1\.3\.6\.1\.4\.1\.\((\d+)\+\)(.*?)<code>(\d+)<\/code>/) {
+    if ($3 == $1 - 1) {
+        s/1\.3\.6\.1\.4\.1\.\(\d+\+\)/1.3.6.1.4.1.(999999+)/;
+        s/<code>\d+<\/code>/<code>999998<\/code>/;
+    }
+}
+' vendor/danielmarschall/oidinfo_api/oid_illegality_rules \
+> vendor/danielmarschall/oidinfo_api/oid_illegality_rules.new
+rm vendor/danielmarschall/oidinfo_api/oid_illegality_rules
+mv vendor/danielmarschall/oidinfo_api/oid_illegality_rules.new vendor/danielmarschall/oidinfo_api/oid_illegality_rules
