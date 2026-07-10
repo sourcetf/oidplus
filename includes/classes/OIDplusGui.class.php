@@ -279,6 +279,7 @@ class OIDplusGui extends OIDplusBaseClass {
 
 		// CSS/JS used by the bundled plugins. If third partys plugin need other CSS/JS, they must include them by implementing htmlHeaderUpdate()
 		$head_elems[] = '<script src="'.htmlentities(OIDplus::webpath(null, OIDplus::PATH_RELATIVE)).'oidplus.min.js.php?noBaseConfig='.$nbc.'&file=vendor/components/jquery/jquery.min.js"></script>';
+		$head_elems[] = '<script src="'.htmlentities(OIDplus::webpath(null, OIDplus::PATH_RELATIVE)).'oidplus.min.js.php?noBaseConfig='.$nbc.'&file=includes/jquery4-polyfills.js"></script>';
 		$head_elems[] = '<script src="'.htmlentities(OIDplus::webpath(null, OIDplus::PATH_RELATIVE)).'oidplus.min.js.php?noBaseConfig='.$nbc.'&file=vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>';
 		$head_elems[] = '<script src="'.htmlentities(OIDplus::webpath(null, OIDplus::PATH_RELATIVE)).'oidplus.min.js.php?noBaseConfig='.$nbc.'&file=vendor/vakata/jstree/dist/jstree.min.js"></script>';
 		$head_elems[] = '<script src="'.htmlentities(OIDplus::webpath(null, OIDplus::PATH_RELATIVE)).'oidplus.min.js.php?noBaseConfig='.$nbc.'&file=vendor/tinymce/tinymce/tinymce.min.js"></script>';
