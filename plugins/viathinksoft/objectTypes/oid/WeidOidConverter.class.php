@@ -44,7 +44,7 @@ class WeidOidConverter {
 	 */
 	protected static function weLuhnGetCheckDigit(string $str) {
 		$str = rtrim($str,'-');
-
+		
 		// Padding zeros don't count to the check digit (December 2021)
 		$ary = explode('-', $str);
 		foreach ($ary as &$a) {
@@ -243,10 +243,9 @@ class WeidOidConverter {
 	 * Converts an OID to WEID
 	 * "1.3.6.1.4.1.37553.8.32488192274" becomes "weid:EXAMPLE-3"
 	 * @param string $oid
-	 * @param string $force_class
 	 * @return false|string
 	 */
-	public static function oid2weid(string $oid, string $force_class="") {
+	public static function oid2weid(string $oid) {
 		$oid = self::oidSanitize($oid);
 		if ($oid === false) return false;
 
@@ -263,14 +262,8 @@ class WeidOidConverter {
 		}
 
 		$is_class_c = (strpos($weidstr, '1-3-6-1-4-1-SZ5-8-') === 0) || ($weidstr === '1-3-6-1-4-1-SZ5-8');
-		if ($is_class_c && $force_class !== 'C' && $force_class !== "") $is_class_c = false;
-
 		$is_class_b_pen = ((strpos($weidstr, '1-3-6-1-4-1-') === 0) || ($weidstr === '1-3-6-1-4-1')) && !$is_class_c;
-		if ($is_class_b_pen && $force_class !== 'B' && $force_class !== "") $is_class_b_pen = false;
-
 		$is_class_b_uuid = ((strpos($weidstr, '2-P-') === 0) || ($weidstr === '2-P'));
-		if ($is_class_b_uuid && $force_class !== 'B' && $force_class !== "") $is_class_b_uuid = false;
-
 		$is_class_a = !$is_class_b_pen && !$is_class_b_uuid && !$is_class_c;
 
 		// Deprecated as of Spec Change 16:
@@ -408,6 +401,7 @@ class WeidOidConverter {
 		return $result;
 	}
 }
+
 
 # --- Usage Example ---
 

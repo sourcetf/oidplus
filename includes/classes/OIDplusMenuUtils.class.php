@@ -153,11 +153,12 @@ class OIDplusMenuUtils extends OIDplusBaseClass {
 			if ($was_weid && class_exists(WeidOidConverter::class)) {
 				$child['id'] = $row['id'];
 				$child['id'] = str_replace('urn:oid:', 'oid:', $child['id']);
-				// Force class A (O-1-3-6...) in order to make sure there is never an ID conflict in the tree
-				$safe_text = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')),"A");
-				$safe_text = str_replace('urn:x-weid:', 'weid:', $safe_text);
-				$hf_text = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')),"");
+				$hf_text = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid(substr($row['id'],strlen('oid:')));
 				$hf_text = str_replace('urn:x-weid:', 'weid:', $hf_text);
+				// Temporarily prefix a "0." to force class A (O-1-3-6...) because this makes sure there is never an ID conflict in the tree
+				$safe_text = (strtolower($row['id']) == 'oid:') ? 'weid:O-?' : WeidOidConverter::oid2weid('0.'.substr($row['id'],strlen('oid:')));
+				$safe_text = str_replace('urn:x-weid:O-0-', 'weid:O-', $safe_text);
+				$safe_text = substr($safe_text, 0, strlen($safe_text)-2) . '-?';
 				$child['id'] = $hf_text . '|' . $safe_text; // Appending "safe text" (Class A WEID) makes sure there is no ID conflict in the tree. oidplus_base.js will strip it away.
 			} else {
 				$child['id'] = $row['id'];

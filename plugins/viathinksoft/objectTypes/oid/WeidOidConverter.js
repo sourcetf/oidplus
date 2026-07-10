@@ -38,9 +38,9 @@
 var WeidOidConverter = {
 
 	weLuhnCheckDigit: function(str) {
-        str = str.replace(/-+$/, '');
+		str = str.replace(/-+$/, '');
 
-        // Padding zeros don't count to the check digit (December 2021)
+		// Padding zeros don't count to the check digit (December 2021)
 		var ary = str.split('-');
 		ary.forEach(function (o,i,a) {
 			if (a[i].match(/^0+$/)) {
