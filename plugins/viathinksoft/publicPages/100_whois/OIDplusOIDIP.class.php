@@ -152,8 +152,11 @@ class OIDplusOIDIP extends OIDplusBaseClass {
 				$out_http_code = 404;
 				$out[] = $this->_oidip_attr('result', 'Not found'); // DO NOT TRANSLATE!
 				$continue = false;
+			} else if ($obj->isRoot()) {
+				// https://hosted.oidplus.com/viathinksoft/oidip/oid/root/text
+				$only_wellknown_ids_found = true; // so that "Information partially available" is shown
+				$continue = true;
 			} else {
-
 				$query = $obj->nodeId(); // normalize
 
 				$obj = null;

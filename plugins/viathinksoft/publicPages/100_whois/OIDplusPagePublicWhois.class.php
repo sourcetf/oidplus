@@ -171,7 +171,7 @@ class OIDplusPagePublicWhois extends OIDplusPagePluginPublic
 			$id = $ary[1] ?? null;
 			if ($id === 'root') $id = '';
 			$format = $ary[2] ?? 'text';
-			if ($ns && $id && $format) {
+			if ($ns && !is_null($id) && $format) {
 				$query = "$ns:$id\$format=$format";
 
 				$auth = null;
@@ -369,6 +369,7 @@ class OIDplusPagePublicWhois extends OIDplusPagePluginPublic
 	public function modifyContent(string $id, string &$title, string &$icon, string &$text): void {
 		//$oidipUrl = OIDplus::webpath(__DIR__,OIDplus::PATH_RELATIVE).'whois/webwhois.php?query='.urlencode($id);
 		list($ns, $id_no_ns) = explode(':', $id, 2);
+		if ($id_no_ns == '') $id_no_ns = 'root';
 		$oidipUrl = OIDplus::webpath().'oidip/'.urlencode($ns).'/'.$id_no_ns;
 		$payload = '<br><img src="'.OIDplus::webpath(__DIR__,OIDplus::PATH_RELATIVE).'img/page_pictogram.png" height="15" alt=""> '.
 		           _L('OID-IP').': '.
