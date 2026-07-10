@@ -200,9 +200,15 @@ class OIDplusPagePublicWhois extends OIDplusPagePluginPublic
 					@header(($_SERVER['SERVER_PROTOCOL']??'HTTP/1.0').' '.$out_http_code.' '.$out_http_code_hf);
 				}
 
+				// Replace the correct oidip+xml type with a generic text xml type,
+				// otherwise Chrome will download the file, even if disposition is inline!
+				// So, instead of Chrome fixing their stuff, we change our software.
+				// See also https://github.com/whatwg/html/issues/7420
+				$out_type = str_replace('application/vnd.viathinksoft.oidip+xml', 'text/xml', $out_type);
+
 				@header('Content-Type: '.$out_type);
-				@header("Content-Disposition: inline"); // TODO! DOES NOT WORK! IT ALWAYS DOWNLOADS!
-				                                        // https://github.com/whatwg/html/issues/7420
+				@header("Content-Disposition: inline");
+
 				echo $out_content;
 			}
 
