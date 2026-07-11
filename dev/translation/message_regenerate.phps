@@ -94,13 +94,10 @@ foreach ($langs as $lang) {
 	$translation_files = glob($dir.'/plugins/'.'*'.'/language/'.$lang.'/messages.json');
 	$translation_file = count($translation_files) > 0 ? $translation_files[0] : null;
 	if (file_exists($translation_file)) {
-		$json = json_decode(file_get_contents($translation_file));
-		if ($json === null) {
+		$translation_array = json_decode(file_get_contents($translation_file),true);
+		if ($translation_array === null) {
 			echo "STOP: Cannot load $translation_file\n";
 			continue;
-		}
-		foreach ($json as $src => $dst) {
-			$translation_array[$src] = $dst;
 		}
 	}
 

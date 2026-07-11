@@ -138,7 +138,7 @@ class OIDplusPagePublicWhois extends OIDplusPagePluginPublic
 		];
 
 		list($oidIPJSON, $dummy_content_type) = $oidip_generator->oidipQuery("$query\$format=json");
-		$out['oidplus_oidip'] = json_decode($oidIPJSON);
+		$out['oidplus_oidip'] = json_decode($oidIPJSON,true);
 		$out['rdapConformance'][]='oidplus_oidip';
 		$out['oidplus_oidip_properties'] = [
 			"\$schema" ,

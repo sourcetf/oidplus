@@ -2354,12 +2354,10 @@ class OIDplus extends OIDplusBaseClass {
 			@file_put_contents(substr($translation_file,0,strlen($translation_file)-4).".json",json_encode($cac, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT)); // auto migrate to JSON
 			return $cac;
 		} else if (substr($translation_file,-5) == '.json') {
-			$json = @json_decode(file_get_contents($translation_file));
-			if ($json === null) return array();
-			$cac = array();
-			foreach ($json as $src => $dst) {
+			$cac = @json_decode(file_get_contents($translation_file),true);
+			if ($cac === null) return array();
+			foreach ($cac as $src => &$dst) {
 				if ($dst == '!!!TODO!!!') $dst = $src; // untranslated
-				$cac[$src] = $dst;
 			}
 			@file_put_contents($cache_file,serialize($cac));
 			@touch($cache_file,filemtime($translation_file));

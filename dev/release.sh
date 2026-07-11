@@ -123,7 +123,7 @@ echo "7. Transfer version info to composer files..."
 
 # 7a. Change composer.json
 # json_decode(...,false) is very important, otherwise '"platform": {}' would become '"platform": []'
-echo '<?php $ary = json_decode(file_get_contents("'$DIR'/../composer.json"),false); $ary->version =  json_decode(file_get_contents("'$DIR'/../changelog.json.php"),true)[1]["version"]; file_put_contents("'$DIR'/../composer.json", json_encode($ary, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));' | php
+echo '<?php $ary = json_decode(file_get_contents("'$DIR'/../composer.json"),false); $ary->version = json_decode(file_get_contents("'$DIR'/../changelog.json.php"),true)[1]["version"]; file_put_contents("'$DIR'/../composer.json", json_encode($ary, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));' | php
 
 # 7b. This is required so that the current version from composer.json gets added to vendor/composer/installed.php
 cd "$DIR"/.. && ./composer.phar install --no-dev
