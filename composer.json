@@ -131,7 +131,7 @@
             "*": "dist"
         },
         "autoloader-suffix": "OidPlusComposer",
-        "platform": []
+        "platform": {}
     },
     "scripts": {
         "post-update-cmd": [

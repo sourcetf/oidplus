@@ -109,7 +109,7 @@ echo "6. Please edit changelog.json.php (add '-dev' for non-stable versions)"
 sleep 2
 while true; do
     nano "$DIR"/../changelog.json.php
-    echo '<?php if (!@json_decode(@file_get_contents("'$DIR'/../changelog.json.php"))) exit(1);' | php
+    echo '<?php if (null === @json_decode(@file_get_contents("'$DIR'/../changelog.json.php"))) exit(1);' | php
     if [ $? -eq 0 ]; then
         break
     else
@@ -118,21 +118,28 @@ while true; do
     fi
 done
 
-# 7. Transfer version from changelog.json.php to composer.json
-echo '<?php $ary = json_decode(file_get_contents("'$DIR'/../composer.json"),true); $ary["version"] =  json_decode(file_get_contents("'$DIR'/../changelog.json.php"),true)[1]["version"]; file_put_contents("'$DIR'/../composer.json", json_encode($ary, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));' | php
+# 7. Transfer version from changelog.json.php to composer.json and vendor/composer/installed.php
+echo "7. Transfer version info to composer files..."
+
+# 7a. Change composer.json
+# json_decode(...,false) is very important, otherwise '"platform": {}' would become '"platform": []'
+echo '<?php $ary = json_decode(file_get_contents("'$DIR'/../composer.json"),false); $ary->version =  json_decode(file_get_contents("'$DIR'/../changelog.json.php"),true)[1]["version"]; file_put_contents("'$DIR'/../composer.json", json_encode($ary, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));' | php
+
+# 7b. This is required so that the current version from composer.json gets added to vendor/composer/installed.php
+cd "$DIR"/.. && ./composer.phar install --no-dev
 
 # 8. Run plugins/viathinksoft/adminPages/902_systemfile_check/private/gen_serverside_v3
-echo "7. Generate system file check checksum file..."
+echo "8. Generate system file check checksum file..."
 "$DIR"/../plugins/viathinksoft/adminPages/902_systemfile_check/private/gen_serverside_v3
 
 # 9. Commit to SVN or GIT
 if [ -d "$DIR"/../.svn ]; then
-	echo "8. Committing to SVN"
+	echo "9. Committing to SVN"
 	svn commit
 elif [ -d "$DIR"/../.git ]; then
-	echo "8. ALL GOOD! PLEASE NOW COMMIT TO GIT"
+	echo "9. ALL GOOD! PLEASE NOW COMMIT TO GIT"
 else
-	echo "8. ALL GOOD! YOU CAN RELEASE IT"
+	echo "9. ALL GOOD! YOU CAN RELEASE IT"
 fi
 exit 0
 
