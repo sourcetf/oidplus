@@ -128,24 +128,28 @@ echo '<?php $ary = json_decode(file_get_contents("'$DIR'/../composer.json"),fals
 # 7b. This is required so that the current version from composer.json gets added to vendor/composer/installed.php
 cd "$DIR"/.. && ./composer.phar install --no-dev
 
-# 8. Run plugins/viathinksoft/adminPages/902_systemfile_check/private/gen_serverside_v3
-echo "8. Generate system file check checksum file..."
+# 8. Generate SBOM
+echo "8. Generate SBOM..."
+cd "$DIR"/.. && ./composer.phar CycloneDX:make-sbom > sbom.json
+
+# 9. Run plugins/viathinksoft/adminPages/902_systemfile_check/private/gen_serverside_v3
+echo "9. Generate system file check checksum file..."
 "$DIR"/../plugins/viathinksoft/adminPages/902_systemfile_check/private/gen_serverside_v3
 
-# 9. Commit to SVN or GIT
+# 10. Commit to SVN or GIT
 if [ -d "$DIR"/../.svn ]; then
-	echo "9. Committing to SVN"
+	echo "10. Committing to SVN"
 	svn commit
 elif [ -d "$DIR"/../.git ]; then
-	echo "9. ALL GOOD! PLEASE NOW COMMIT TO GIT"
+	echo "10. ALL GOOD! PLEASE NOW COMMIT TO GIT"
 else
-	echo "9. ALL GOOD! YOU CAN RELEASE IT"
+	echo "10. ALL GOOD! YOU CAN RELEASE IT"
 fi
 exit 0
 
-# 10. (ViaThinkSoft internal / runs automatically) Sync SVN to GitHub
+# 11. (ViaThinkSoft internal / runs automatically) Sync SVN to GitHub
 
-# 11. (ViaThinkSoft internal / runs automatically) Run plugins/viathinksoft/adminPages/900_software_update/private/gen_serverside_git
+# 12. (ViaThinkSoft internal / runs automatically) Run plugins/viathinksoft/adminPages/900_software_update/private/gen_serverside_git
 #                                                  or  plugins/viathinksoft/adminPages/900_software_update/private/gen_serverside_svn
 #                                                  depending wheather you want to use GIT or SVN as your development base
 #                                                  (Repos are read from includes/edition.ini)

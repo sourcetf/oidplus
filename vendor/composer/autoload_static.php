@@ -30,6 +30,13 @@ class ComposerStaticInitOidPlusComposer
         'P' =>
         array (
             'ParagonIE\\ConstantTime\\' => 23,
+            'PackageUrl\\' => 11,
+        ),
+        'O' =>
+        array (
+            'Opis\\Uri\\' => 9,
+            'Opis\\String\\' => 12,
+            'Opis\\JsonSchema\\' => 16,
         ),
         'M' =>
         array (
@@ -39,6 +46,13 @@ class ComposerStaticInitOidPlusComposer
         'F' =>
         array (
             'Firebase\\JWT\\' => 13,
+        ),
+        'C' =>
+        array (
+            'CycloneDX\\Core\\' => 15,
+            'CycloneDX\\Contrib\\' => 18,
+            'CycloneDX\\Composer\\' => 19,
+            'Composer\\Spdx\\' => 14,
         ),
     );
 
@@ -67,6 +81,22 @@ class ComposerStaticInitOidPlusComposer
         array (
             0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
         ),
+        'PackageUrl\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/package-url/packageurl-php/src',
+        ),
+        'Opis\\Uri\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/opis/uri/src',
+        ),
+        'Opis\\String\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/opis/string/src',
+        ),
+        'Opis\\JsonSchema\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/opis/json-schema/src',
+        ),
         'MatthiasMullie\\PathConverter\\' =>
         array (
             0 => __DIR__ . '/..' . '/matthiasmullie/path-converter/src',
@@ -78,6 +108,22 @@ class ComposerStaticInitOidPlusComposer
         'Firebase\\JWT\\' =>
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
+        'CycloneDX\\Core\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/cyclonedx/cyclonedx-library/src/Core',
+        ),
+        'CycloneDX\\Contrib\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/cyclonedx/cyclonedx-library/src/Contrib',
+        ),
+        'CycloneDX\\Composer\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/cyclonedx/cyclonedx-php-composer/src',
+        ),
+        'Composer\\Spdx\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/composer/spdx-licenses/src',
         ),
     );
 

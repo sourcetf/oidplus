@@ -1,0 +1,1407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bom xmlns="http://cyclonedx.org/schema/bom/1.5" version="1" serialNumber="urn:uuid:4e59a42a-eba3-4d0c-a17b-c0fcc48bd264">
+  <metadata>
+    <timestamp><![CDATA[2026-07-11T20:29:09Z]]></timestamp>
+    <tools>
+      <tool>
+        <name><![CDATA[composer]]></name>
+        <version><![CDATA[2.10.2]]></version>
+      </tool>
+      <tool>
+        <vendor><![CDATA[cyclonedx]]></vendor>
+        <name><![CDATA[cyclonedx-php-composer]]></name>
+        <version><![CDATA[6.x-dev]]></version>
+        <externalReferences>
+          <reference type="distribution">
+            <url><![CDATA[https://api.github.com/repos/CycloneDX/cyclonedx-php-composer/zipball/9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></url>
+            <comment><![CDATA[dist reference: 9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></comment>
+          </reference>
+          <reference type="vcs">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer.git]]></url>
+            <comment><![CDATA[source reference: 9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></comment>
+          </reference>
+          <reference type="website">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer/#readme]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+          </reference>
+          <reference type="issue-tracker">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer/issues]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+          </reference>
+          <reference type="vcs">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer/]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+          </reference>
+        </externalReferences>
+      </tool>
+      <tool>
+        <vendor><![CDATA[cyclonedx]]></vendor>
+        <name><![CDATA[cyclonedx-library]]></name>
+        <version><![CDATA[4.x-dev]]></version>
+        <externalReferences>
+          <reference type="distribution">
+            <url><![CDATA[https://api.github.com/repos/CycloneDX/cyclonedx-php-library/zipball/0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></url>
+            <comment><![CDATA[dist reference: 0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></comment>
+          </reference>
+          <reference type="vcs">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library.git]]></url>
+            <comment><![CDATA[source reference: 0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></comment>
+          </reference>
+          <reference type="website">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library/#readme]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+          </reference>
+          <reference type="documentation">
+            <url><![CDATA[https://cyclonedx-php-library.readthedocs.io]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'support.docs']]></comment>
+          </reference>
+          <reference type="issue-tracker">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library/issues]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+          </reference>
+          <reference type="vcs">
+            <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library/]]></url>
+            <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+          </reference>
+        </externalReferences>
+      </tool>
+    </tools>
+    <component type="application" bom-ref="danielmarschall/oidplus-2.0.3.1">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[oidplus]]></name>
+      <version><![CDATA[2.0.3.1]]></version>
+      <description><![CDATA[OIDplus 2.0]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/oidplus@2.0.3.1]]></purl>
+      <externalReferences>
+        <reference type="website">
+          <url><![CDATA[https://www.oidplus.com/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:type"><![CDATA[project]]></property>
+      </properties>
+    </component>
+  </metadata>
+  <components>
+    <component type="library" bom-ref="components/jquery-dev-master">
+      <author><![CDATA[JS Foundation and other contributors]]></author>
+      <group><![CDATA[components]]></group>
+      <name><![CDATA[jquery]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[jQuery JavaScript Library]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/components/jquery@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/components/jquery/zipball/594f9dd922c3b12519c8d52bde744b79fd2ca816]]></url>
+          <comment><![CDATA[dist reference: 594f9dd922c3b12519c8d52bde744b79fd2ca816]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/components/jquery.git]]></url>
+          <comment><![CDATA[source reference: 594f9dd922c3b12519c8d52bde744b79fd2ca816]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[http://jquery.com]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="other">
+          <url><![CDATA[http://forum.jquery.com]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.forum']]></comment>
+        </reference>
+        <reference type="chat">
+          <url><![CDATA[irc://irc.freenode.org/jquery]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.irc']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/jquery/jquery/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/jquery/jquery]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+        <reference type="other">
+          <url><![CDATA[http://docs.jquery.com/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.wiki']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[594f9dd922c3b12519c8d52bde744b79fd2ca816]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[594f9dd922c3b12519c8d52bde744b79fd2ca816]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[component]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="components/jqueryui-dev-master">
+      <author><![CDATA[jQuery UI Team, Scott Gonzalez, Joern Zaefferer, Kris Borchers, Corey Frang, Mike Sherov, TJ VanToll, Felix Nagel]]></author>
+      <group><![CDATA[components]]></group>
+      <name><![CDATA[jqueryui]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[jQuery UI is a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/components/jqueryui@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc]]></url>
+          <comment><![CDATA[dist reference: 44ecf3794cc56b65954cc19737234a3119d036cc]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/components/jqueryui.git]]></url>
+          <comment><![CDATA[source reference: 44ecf3794cc56b65954cc19737234a3119d036cc]]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/components/jqueryui/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/components/jqueryui/tree/1.12.1]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[44ecf3794cc56b65954cc19737234a3119d036cc]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[44ecf3794cc56b65954cc19737234a3119d036cc]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[component]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="composer/spdx-licenses-dev-main">
+      <author><![CDATA[Nils Adermann, Jordi Boggiano, Rob Bast]]></author>
+      <group><![CDATA[composer]]></group>
+      <name><![CDATA[spdx-licenses]]></name>
+      <version><![CDATA[dev-main]]></version>
+      <description><![CDATA[SPDX licenses list and validation library.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/composer/spdx-licenses@dev-main]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/composer/spdx-licenses/zipball/f0599ceb3b99c72aab10027bd500a8a1c7c2b93f]]></url>
+          <comment><![CDATA[dist reference: f0599ceb3b99c72aab10027bd500a8a1c7c2b93f]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/composer/spdx-licenses.git]]></url>
+          <comment><![CDATA[source reference: f0599ceb3b99c72aab10027bd500a8a1c7c2b93f]]></comment>
+        </reference>
+        <reference type="chat">
+          <url><![CDATA[ircs://irc.libera.chat:6697/composer]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.irc']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/composer/spdx-licenses/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/composer/spdx-licenses/tree/main]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[f0599ceb3b99c72aab10027bd500a8a1c7c2b93f]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[f0599ceb3b99c72aab10027bd500a8a1c7c2b93f]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="cyclonedx/cyclonedx-library-dev-master">
+      <author><![CDATA[Jan Kowalleck]]></author>
+      <group><![CDATA[cyclonedx]]></group>
+      <name><![CDATA[cyclonedx-library]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Work with CycloneDX documents.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/cyclonedx/cyclonedx-library@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/CycloneDX/cyclonedx-php-library/zipball/0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></url>
+          <comment><![CDATA[dist reference: 0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library.git]]></url>
+          <comment><![CDATA[source reference: 0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library/#readme]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="documentation">
+          <url><![CDATA[https://cyclonedx-php-library.readthedocs.io]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.docs']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-library/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[0e09e555e60bdf35e17f5e18b42a2db03022cc5d]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="cyclonedx/cyclonedx-php-composer-dev-master">
+      <author><![CDATA[Jan Kowalleck]]></author>
+      <group><![CDATA[cyclonedx]]></group>
+      <name><![CDATA[cyclonedx-php-composer]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Creates CycloneDX Software Bill-of-Materials (SBOM) from PHP Composer projects]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/cyclonedx/cyclonedx-php-composer@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/CycloneDX/cyclonedx-php-composer/zipball/9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></url>
+          <comment><![CDATA[dist reference: 9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer.git]]></url>
+          <comment><![CDATA[source reference: 9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer/#readme]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/CycloneDX/cyclonedx-php-composer/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[9b7b25b938a3484bae52a8dd6c8240919365ed2e]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[composer-plugin]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/fileformats-dev-master">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[fileformats]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[File format detection in PHP]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/fileformats@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/fileformats/zipball/8d08352cae97f4c701b39482584b746e839c8d76]]></url>
+          <comment><![CDATA[dist reference: 8d08352cae97f4c701b39482584b746e839c8d76]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/fileformats.git]]></url>
+          <comment><![CDATA[source reference: 8d08352cae97f4c701b39482584b746e839c8d76]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.viathinksoft.com/projects/fileformats]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/fileformats/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/fileformats/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[8d08352cae97f4c701b39482584b746e839c8d76]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[8d08352cae97f4c701b39482584b746e839c8d76]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/glip-dev-master">
+      <author><![CDATA[Patrik Fimml, Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[glip]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Git library for PHP]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[GPL-2.0-or-later]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/glip@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/glip/zipball/681871be63734893ac6c4ea6c1db99e9ab7e0807]]></url>
+          <comment><![CDATA[dist reference: 681871be63734893ac6c4ea6c1db99e9ab7e0807]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/glip.git]]></url>
+          <comment><![CDATA[source reference: 681871be63734893ac6c4ea6c1db99e9ab7e0807]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://fimml.at/projects/glip]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/glip/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/glip/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[681871be63734893ac6c4ea6c1db99e9ab7e0807]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[681871be63734893ac6c4ea6c1db99e9ab7e0807]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/oidconverter-dev-master">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[oidconverter]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[OID/DER converter]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/oidconverter@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/oidconverter/zipball/cd036ff233ff368e619bf09e3045cb5180850eb7]]></url>
+          <comment><![CDATA[dist reference: cd036ff233ff368e619bf09e3045cb5180850eb7]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/oidconverter.git]]></url>
+          <comment><![CDATA[source reference: cd036ff233ff368e619bf09e3045cb5180850eb7]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.viathinksoft.com/projects/oidconverter]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/oidconverter/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/oidconverter/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[cd036ff233ff368e619bf09e3045cb5180850eb7]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[cd036ff233ff368e619bf09e3045cb5180850eb7]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/oidinfo_api-dev-master">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[oidinfo_api]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[OID-Base.com API for PHP]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/oidinfo_api@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/oidinfo_api/zipball/fc588f5ad5154a48bd4b7ef68ad29942f00b392c]]></url>
+          <comment><![CDATA[dist reference: fc588f5ad5154a48bd4b7ef68ad29942f00b392c]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/oidinfo_api.git]]></url>
+          <comment><![CDATA[source reference: fc588f5ad5154a48bd4b7ef68ad29942f00b392c]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.viathinksoft.com/projects/oidinfo_api]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/oidinfo_api/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/oidinfo_api/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[fc588f5ad5154a48bd4b7ef68ad29942f00b392c]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[fc588f5ad5154a48bd4b7ef68ad29942f00b392c]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/php_utils-dev-master">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[php_utils]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[PHP functions]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/php_utils@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/php_utils/zipball/8a051046b244e32b61dee0dfbeef27f932a61d33]]></url>
+          <comment><![CDATA[dist reference: 8a051046b244e32b61dee0dfbeef27f932a61d33]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/php_utils.git]]></url>
+          <comment><![CDATA[source reference: 8a051046b244e32b61dee0dfbeef27f932a61d33]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.viathinksoft.com/projects/php_utils]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/php_utils/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/php_utils/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[8a051046b244e32b61dee0dfbeef27f932a61d33]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[8a051046b244e32b61dee0dfbeef27f932a61d33]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/uuid_mac_utils-dev-master">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[uuid_mac_utils]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[UUID & MAC Utils for PHP]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/uuid_mac_utils@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/uuid_mac_utils/zipball/947e85660b154b7c86816306695eceee8cd6250c]]></url>
+          <comment><![CDATA[dist reference: 947e85660b154b7c86816306695eceee8cd6250c]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/uuid_mac_utils.git]]></url>
+          <comment><![CDATA[source reference: 947e85660b154b7c86816306695eceee8cd6250c]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.viathinksoft.com/projects/uuid_mac_utils]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/uuid_mac_utils/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/uuid_mac_utils/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[947e85660b154b7c86816306695eceee8cd6250c]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[947e85660b154b7c86816306695eceee8cd6250c]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="danielmarschall/vnag-dev-master">
+      <author><![CDATA[Daniel Marschall]]></author>
+      <group><![CDATA[danielmarschall]]></group>
+      <name><![CDATA[vnag]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[VNag - Framework for developing Nagios plugins with PHP]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/danielmarschall/vnag@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/vnag/zipball/82e606b0621e33eb785ef827e8a13cbff8e2194a]]></url>
+          <comment><![CDATA[dist reference: 82e606b0621e33eb785ef827e8a13cbff8e2194a]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/vnag.git]]></url>
+          <comment><![CDATA[source reference: 82e606b0621e33eb785ef827e8a13cbff8e2194a]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.viathinksoft.com/projects/vnag]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/danielmarschall/vnag/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/danielmarschall/vnag/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[82e606b0621e33eb785ef827e8a13cbff8e2194a]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[82e606b0621e33eb785ef827e8a13cbff8e2194a]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="dcodeio/bcrypt.js-2.4.3.0">
+      <group><![CDATA[dcodeio]]></group>
+      <name><![CDATA[bcrypt.js]]></name>
+      <version><![CDATA[2.4.3]]></version>
+      <licenses>
+        <license>
+          <id><![CDATA[BSD-3-Clause]]></id>
+        </license>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/dcodeio/bcrypt.js@2.4.3]]></purl>
+      <externalReferences>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/dcodeIO/bcrypt.js]]></url>
+          <comment><![CDATA[source reference: 2.4.3]]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[2.4.3]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="emn178/js-sha3-dev-master">
+      <group><![CDATA[emn178]]></group>
+      <name><![CDATA[js-sha3]]></name>
+      <version><![CDATA[master]]></version>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/emn178/js-sha3@master]]></purl>
+      <externalReferences>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/emn178/js-sha3]]></url>
+          <comment><![CDATA[source reference: master]]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[master]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="firebase/php-jwt-dev-main">
+      <author><![CDATA[Neuman Vong, Anant Narayanan]]></author>
+      <group><![CDATA[firebase]]></group>
+      <name><![CDATA[php-jwt]]></name>
+      <version><![CDATA[dev-main]]></version>
+      <description><![CDATA[A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[BSD-3-Clause]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/firebase/php-jwt@dev-main]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/googleapis/php-jwt/zipball/b374a5d1a4f1f67fadc2165cdb284645945e2fc0]]></url>
+          <comment><![CDATA[dist reference: b374a5d1a4f1f67fadc2165cdb284645945e2fc0]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/googleapis/php-jwt.git]]></url>
+          <comment><![CDATA[source reference: b374a5d1a4f1f67fadc2165cdb284645945e2fc0]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/googleapis/php-jwt]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/googleapis/php-jwt/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/googleapis/php-jwt/tree/main]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[b374a5d1a4f1f67fadc2165cdb284645945e2fc0]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[b374a5d1a4f1f67fadc2165cdb284645945e2fc0]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="gedmarc/layout-dev-master">
+      <group><![CDATA[gedmarc]]></group>
+      <name><![CDATA[layout]]></name>
+      <version><![CDATA[master]]></version>
+      <licenses>
+        <license>
+          <id><![CDATA[GPL-3.0-or-later]]></id>
+        </license>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/gedmarc/layout@master]]></purl>
+      <externalReferences>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/GedMarc/layout]]></url>
+          <comment><![CDATA[source reference: master]]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[master]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="matthiasmullie/minify-dev-master">
+      <author><![CDATA[Matthias Mullie]]></author>
+      <group><![CDATA[matthiasmullie]]></group>
+      <name><![CDATA[minify]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/matthiasmullie/minify@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/matthiasmullie/minify/zipball/76ba4a5f555fd7bf4aa408af608e991569076671]]></url>
+          <comment><![CDATA[dist reference: 76ba4a5f555fd7bf4aa408af608e991569076671]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/matthiasmullie/minify.git]]></url>
+          <comment><![CDATA[source reference: 76ba4a5f555fd7bf4aa408af608e991569076671]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/matthiasmullie/minify]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/matthiasmullie/minify/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/matthiasmullie/minify/tree/1.3.75]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[76ba4a5f555fd7bf4aa408af608e991569076671]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[76ba4a5f555fd7bf4aa408af608e991569076671]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="matthiasmullie/path-converter-1.1.3.0">
+      <author><![CDATA[Matthias Mullie]]></author>
+      <group><![CDATA[matthiasmullie]]></group>
+      <name><![CDATA[path-converter]]></name>
+      <version><![CDATA[1.1.3]]></version>
+      <description><![CDATA[Relative path converter]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/matthiasmullie/path-converter@1.1.3]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/matthiasmullie/path-converter/zipball/e7d13b2c7e2f2268e1424aaed02085518afa02d9]]></url>
+          <comment><![CDATA[dist reference: e7d13b2c7e2f2268e1424aaed02085518afa02d9]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/matthiasmullie/path-converter.git]]></url>
+          <comment><![CDATA[source reference: e7d13b2c7e2f2268e1424aaed02085518afa02d9]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[http://github.com/matthiasmullie/path-converter]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/matthiasmullie/path-converter/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/matthiasmullie/path-converter/tree/1.1.3]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[e7d13b2c7e2f2268e1424aaed02085518afa02d9]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[e7d13b2c7e2f2268e1424aaed02085518afa02d9]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="opis/json-schema-dev-master">
+      <author><![CDATA[Sorin Sarca, Marius Sarca]]></author>
+      <group><![CDATA[opis]]></group>
+      <name><![CDATA[json-schema]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Json Schema Validator for PHP]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/opis/json-schema@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/opis/json-schema/zipball/85d8523cc5cff5494efaf54112605290d394b67e]]></url>
+          <comment><![CDATA[dist reference: 85d8523cc5cff5494efaf54112605290d394b67e]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/opis/json-schema.git]]></url>
+          <comment><![CDATA[source reference: 85d8523cc5cff5494efaf54112605290d394b67e]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://opis.io/json-schema]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/opis/json-schema/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/opis/json-schema/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[85d8523cc5cff5494efaf54112605290d394b67e]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[85d8523cc5cff5494efaf54112605290d394b67e]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="opis/string-dev-master">
+      <author><![CDATA[Marius Sarca, Sorin Sarca]]></author>
+      <group><![CDATA[opis]]></group>
+      <name><![CDATA[string]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Multibyte strings as objects]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/opis/string@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/opis/string/zipball/3e4d2aaff518ac518530b89bb26ed40f4503635e]]></url>
+          <comment><![CDATA[dist reference: 3e4d2aaff518ac518530b89bb26ed40f4503635e]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/opis/string.git]]></url>
+          <comment><![CDATA[source reference: 3e4d2aaff518ac518530b89bb26ed40f4503635e]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://opis.io/string]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/opis/string/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/opis/string/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[3e4d2aaff518ac518530b89bb26ed40f4503635e]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[3e4d2aaff518ac518530b89bb26ed40f4503635e]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="opis/uri-dev-master">
+      <author><![CDATA[Marius Sarca, Sorin Sarca]]></author>
+      <group><![CDATA[opis]]></group>
+      <name><![CDATA[uri]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Build, parse and validate URIs and URI-templates]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[Apache-2.0]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/opis/uri@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/opis/uri/zipball/e135d17b5fc9c51ac58b4cf46acc12e70573fc40]]></url>
+          <comment><![CDATA[dist reference: e135d17b5fc9c51ac58b4cf46acc12e70573fc40]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/opis/uri.git]]></url>
+          <comment><![CDATA[source reference: e135d17b5fc9c51ac58b4cf46acc12e70573fc40]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://opis.io]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/opis/uri/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/opis/uri/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[e135d17b5fc9c51ac58b4cf46acc12e70573fc40]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[e135d17b5fc9c51ac58b4cf46acc12e70573fc40]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="package-url/packageurl-php-1.1.2.0">
+      <author><![CDATA[Jan Kowalleck]]></author>
+      <group><![CDATA[package-url]]></group>
+      <name><![CDATA[packageurl-php]]></name>
+      <version><![CDATA[1.1.2]]></version>
+      <description><![CDATA[Builder and parser based on the package URL (purl) specification.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/package-url/packageurl-php@1.1.2]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/package-url/packageurl-php/zipball/32058ad61f0d8b457fa26e7860bbd8b903196d3f]]></url>
+          <comment><![CDATA[dist reference: 32058ad61f0d8b457fa26e7860bbd8b903196d3f]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/package-url/packageurl-php.git]]></url>
+          <comment><![CDATA[source reference: 32058ad61f0d8b457fa26e7860bbd8b903196d3f]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/package-url/packageurl-php#readme]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/package-url/packageurl-php/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/package-url/packageurl-php/tree/1.1.2]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[32058ad61f0d8b457fa26e7860bbd8b903196d3f]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[32058ad61f0d8b457fa26e7860bbd8b903196d3f]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="paragonie/constant_time_encoding-3.1.3.0">
+      <author><![CDATA[Paragon Initiative Enterprises, Steve 'Sc00bz' Thomas]]></author>
+      <group><![CDATA[paragonie]]></group>
+      <name><![CDATA[constant_time_encoding]]></name>
+      <version><![CDATA[v3.1.3]]></version>
+      <description><![CDATA[Constant-time Implementations of RFC 4648 Encoding (Base-64, Base-32, Base-16)]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/paragonie/constant_time_encoding@v3.1.3]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/paragonie/constant_time_encoding/zipball/d5b01a39b3415c2cd581d3bd3a3575c1ebbd8e77]]></url>
+          <comment><![CDATA[dist reference: d5b01a39b3415c2cd581d3bd3a3575c1ebbd8e77]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/paragonie/constant_time_encoding.git]]></url>
+          <comment><![CDATA[source reference: d5b01a39b3415c2cd581d3bd3a3575c1ebbd8e77]]></comment>
+        </reference>
+        <reference type="other">
+          <url><![CDATA[info@paragonie.com]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.email']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/paragonie/constant_time_encoding/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/paragonie/constant_time_encoding]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[d5b01a39b3415c2cd581d3bd3a3575c1ebbd8e77]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[d5b01a39b3415c2cd581d3bd3a3575c1ebbd8e77]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="phpseclib/phpseclib-dev-master">
+      <author><![CDATA[Jim Wigginton, Patrick Monnerat, Andreas Fischer, Hans-Jürgen Petrich, Graham Campbell, Jack Worman]]></author>
+      <group><![CDATA[phpseclib]]></group>
+      <name><![CDATA[phpseclib]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/phpseclib/phpseclib@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/phpseclib/phpseclib/zipball/8c3b39377e0db93dc51dd308123891f2cc7703fc]]></url>
+          <comment><![CDATA[dist reference: 8c3b39377e0db93dc51dd308123891f2cc7703fc]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/phpseclib/phpseclib.git]]></url>
+          <comment><![CDATA[source reference: 8c3b39377e0db93dc51dd308123891f2cc7703fc]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://phpseclib.com/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/phpseclib/phpseclib/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/phpseclib/phpseclib/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[8c3b39377e0db93dc51dd308123891f2cc7703fc]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[8c3b39377e0db93dc51dd308123891f2cc7703fc]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="script47/bs5-utils-dev-master">
+      <group><![CDATA[script47]]></group>
+      <name><![CDATA[bs5-utils]]></name>
+      <version><![CDATA[master]]></version>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/script47/bs5-utils@master]]></purl>
+      <externalReferences>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/Script47/bs5-utils]]></url>
+          <comment><![CDATA[source reference: master]]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[master]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="spamspan/spamspan-dev-master">
+      <group><![CDATA[spamspan]]></group>
+      <name><![CDATA[spamspan]]></name>
+      <version><![CDATA[master]]></version>
+      <licenses>
+        <license>
+          <id><![CDATA[GPL-2.0-only]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/spamspan/spamspan@master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://www.spamspan.com/releases/spamspan-latest.zip]]></url>
+          <comment><![CDATA[dist reference: master]]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[master]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="spomky-labs/php-punycode-dev-master">
+      <author><![CDATA[Renan Gonçalves, Florent Morselli, All contributors]]></author>
+      <group><![CDATA[spomky-labs]]></group>
+      <name><![CDATA[php-punycode]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[A Bootstring encoding of Unicode for Internationalized Domain Names in Applications (IDNA)]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/spomky-labs/php-punycode@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/Spomky-Labs/php-punycode/zipball/d12fe5cd18acedc79851ddc8effd7767d00485f1]]></url>
+          <comment><![CDATA[dist reference: d12fe5cd18acedc79851ddc8effd7767d00485f1]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/Spomky-Labs/php-punycode.git]]></url>
+          <comment><![CDATA[source reference: d12fe5cd18acedc79851ddc8effd7767d00485f1]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/spomky-labs/php-punycode]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/Spomky-Labs/php-punycode/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/Spomky-Labs/php-punycode/tree/master]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[d12fe5cd18acedc79851ddc8effd7767d00485f1]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[d12fe5cd18acedc79851ddc8effd7767d00485f1]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="symfony/polyfill-mbstring-1.9999999.9999999.9999999-dev">
+      <author><![CDATA[Nicolas Grekas, Symfony Community]]></author>
+      <group><![CDATA[symfony]]></group>
+      <name><![CDATA[polyfill-mbstring]]></name>
+      <version><![CDATA[1.x-dev]]></version>
+      <description><![CDATA[Symfony polyfill for the Mbstring extension]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/symfony/polyfill-mbstring@1.x-dev]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6]]></url>
+          <comment><![CDATA[dist reference: d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/symfony/polyfill-mbstring.git]]></url>
+          <comment><![CDATA[source reference: d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://symfony.com]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/symfony/polyfill-mbstring/tree/1.x]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[d3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="symfony/polyfill-php82-1.9999999.9999999.9999999-dev">
+      <author><![CDATA[Nicolas Grekas, Symfony Community]]></author>
+      <group><![CDATA[symfony]]></group>
+      <name><![CDATA[polyfill-php82]]></name>
+      <version><![CDATA[1.x-dev]]></version>
+      <description><![CDATA[Symfony polyfill backporting some PHP 8.2+ features to lower PHP versions]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/symfony/polyfill-php82@1.x-dev]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/symfony/polyfill-php82/zipball/002dc0cfe5fd4ed6033d48f27d4f19a486c4b04b]]></url>
+          <comment><![CDATA[dist reference: 002dc0cfe5fd4ed6033d48f27d4f19a486c4b04b]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/symfony/polyfill-php82.git]]></url>
+          <comment><![CDATA[source reference: 002dc0cfe5fd4ed6033d48f27d4f19a486c4b04b]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://symfony.com]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/symfony/polyfill-php82/tree/1.x]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[002dc0cfe5fd4ed6033d48f27d4f19a486c4b04b]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[002dc0cfe5fd4ed6033d48f27d4f19a486c4b04b]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="tinymce/tinymce-8.7.0.0">
+      <group><![CDATA[tinymce]]></group>
+      <name><![CDATA[tinymce]]></name>
+      <version><![CDATA[8.7.0]]></version>
+      <description><![CDATA[Web based JavaScript HTML WYSIWYG editor control.]]></description>
+      <licenses>
+        <license>
+          <name><![CDATA[SEE LICENSE IN license.md]]></name>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/tinymce/tinymce@8.7.0]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/tinymce/tinymce-dist/zipball/147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></url>
+          <comment><![CDATA[dist reference: 147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/tinymce/tinymce-dist.git]]></url>
+          <comment><![CDATA[source reference: 147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://www.tiny.cloud/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/tinymce/tinymce-dist/tree/8.7.0]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[component]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="twbs/bootstrap-dev-main">
+      <author><![CDATA[Mark Otto, Jacob Thornton]]></author>
+      <group><![CDATA[twbs]]></group>
+      <name><![CDATA[bootstrap]]></name>
+      <version><![CDATA[dev-main]]></version>
+      <description><![CDATA[The most popular front-end framework for developing responsive, mobile first projects on the web.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/twbs/bootstrap@dev-main]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/twbs/bootstrap/zipball/b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></url>
+          <comment><![CDATA[dist reference: b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/twbs/bootstrap.git]]></url>
+          <comment><![CDATA[source reference: b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://getbootstrap.com/]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/twbs/bootstrap/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/twbs/bootstrap/tree/main]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="tweeb/tinymce-i18n-dev-master">
+      <author><![CDATA[TinyMCE Community]]></author>
+      <group><![CDATA[tweeb]]></group>
+      <name><![CDATA[tinymce-i18n]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[Languages for TinyMCE 6]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/tweeb/tinymce-i18n@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/tweeb/tinymce-i18n/zipball/058da08d6e61dc4e0279de6509bb6969a62f68e5]]></url>
+          <comment><![CDATA[dist reference: 058da08d6e61dc4e0279de6509bb6969a62f68e5]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/tweeb/tinymce-i18n.git]]></url>
+          <comment><![CDATA[source reference: 058da08d6e61dc4e0279de6509bb6969a62f68e5]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[https://github.com/tweeb/tinymce-i18n]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/tweeb/tinymce-i18n/tree/2.0.4]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[058da08d6e61dc4e0279de6509bb6969a62f68e5]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[058da08d6e61dc4e0279de6509bb6969a62f68e5]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[library]]></property>
+      </properties>
+    </component>
+    <component type="library" bom-ref="vakata/jstree-dev-master">
+      <author><![CDATA[Ivan Bozhanov]]></author>
+      <group><![CDATA[vakata]]></group>
+      <name><![CDATA[jstree]]></name>
+      <version><![CDATA[dev-master]]></version>
+      <description><![CDATA[jsTree is jquery plugin, that provides interactive trees.]]></description>
+      <licenses>
+        <license>
+          <id><![CDATA[MIT]]></id>
+        </license>
+      </licenses>
+      <purl><![CDATA[pkg:composer/vakata/jstree@dev-master]]></purl>
+      <externalReferences>
+        <reference type="distribution">
+          <url><![CDATA[https://api.github.com/repos/vakata/jstree/zipball/6256df013ebd98aea138402d8ac96db3efe0c0da]]></url>
+          <comment><![CDATA[dist reference: 6256df013ebd98aea138402d8ac96db3efe0c0da]]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/vakata/jstree.git]]></url>
+          <comment><![CDATA[source reference: 6256df013ebd98aea138402d8ac96db3efe0c0da]]></comment>
+        </reference>
+        <reference type="website">
+          <url><![CDATA[http://jstree.com]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
+        </reference>
+        <reference type="other">
+          <url><![CDATA[https://groups.google.com/forum/#!forum/jstree]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.forum']]></comment>
+        </reference>
+        <reference type="issue-tracker">
+          <url><![CDATA[https://github.com/vakata/jstree/issues]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.issues']]></comment>
+        </reference>
+        <reference type="vcs">
+          <url><![CDATA[https://github.com/vakata/jstree]]></url>
+          <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
+        </reference>
+      </externalReferences>
+      <properties>
+        <property name="cdx:composer:package:distReference"><![CDATA[6256df013ebd98aea138402d8ac96db3efe0c0da]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[6256df013ebd98aea138402d8ac96db3efe0c0da]]></property>
+        <property name="cdx:composer:package:type"><![CDATA[component]]></property>
+      </properties>
+    </component>
+  </components>
+  <dependencies>
+    <dependency ref="components/jquery-dev-master"/>
+    <dependency ref="components/jqueryui-dev-master">
+      <dependency ref="components/jquery-dev-master"/>
+    </dependency>
+    <dependency ref="composer/spdx-licenses-dev-main"/>
+    <dependency ref="cyclonedx/cyclonedx-library-dev-master">
+      <dependency ref="opis/json-schema-dev-master"/>
+    </dependency>
+    <dependency ref="cyclonedx/cyclonedx-php-composer-dev-master">
+      <dependency ref="composer/spdx-licenses-dev-main"/>
+      <dependency ref="cyclonedx/cyclonedx-library-dev-master"/>
+      <dependency ref="package-url/packageurl-php-1.1.2.0"/>
+    </dependency>
+    <dependency ref="danielmarschall/fileformats-dev-master"/>
+    <dependency ref="danielmarschall/glip-dev-master"/>
+    <dependency ref="danielmarschall/oidconverter-dev-master"/>
+    <dependency ref="danielmarschall/oidinfo_api-dev-master"/>
+    <dependency ref="danielmarschall/php_utils-dev-master"/>
+    <dependency ref="danielmarschall/uuid_mac_utils-dev-master"/>
+    <dependency ref="danielmarschall/vnag-dev-master"/>
+    <dependency ref="dcodeio/bcrypt.js-2.4.3.0"/>
+    <dependency ref="emn178/js-sha3-dev-master"/>
+    <dependency ref="firebase/php-jwt-dev-main"/>
+    <dependency ref="gedmarc/layout-dev-master"/>
+    <dependency ref="matthiasmullie/minify-dev-master">
+      <dependency ref="matthiasmullie/path-converter-1.1.3.0"/>
+    </dependency>
+    <dependency ref="matthiasmullie/path-converter-1.1.3.0"/>
+    <dependency ref="opis/json-schema-dev-master">
+      <dependency ref="opis/string-dev-master"/>
+      <dependency ref="opis/uri-dev-master"/>
+    </dependency>
+    <dependency ref="opis/string-dev-master"/>
+    <dependency ref="opis/uri-dev-master">
+      <dependency ref="opis/string-dev-master"/>
+    </dependency>
+    <dependency ref="package-url/packageurl-php-1.1.2.0"/>
+    <dependency ref="paragonie/constant_time_encoding-3.1.3.0"/>
+    <dependency ref="phpseclib/phpseclib-dev-master">
+      <dependency ref="paragonie/constant_time_encoding-3.1.3.0"/>
+      <dependency ref="symfony/polyfill-php82-1.9999999.9999999.9999999-dev"/>
+    </dependency>
+    <dependency ref="script47/bs5-utils-dev-master"/>
+    <dependency ref="spamspan/spamspan-dev-master"/>
+    <dependency ref="spomky-labs/php-punycode-dev-master">
+      <dependency ref="symfony/polyfill-mbstring-1.9999999.9999999.9999999-dev"/>
+    </dependency>
+    <dependency ref="symfony/polyfill-mbstring-1.9999999.9999999.9999999-dev"/>
+    <dependency ref="symfony/polyfill-php82-1.9999999.9999999.9999999-dev"/>
+    <dependency ref="tinymce/tinymce-8.7.0.0"/>
+    <dependency ref="twbs/bootstrap-dev-main"/>
+    <dependency ref="tweeb/tinymce-i18n-dev-master"/>
+    <dependency ref="vakata/jstree-dev-master">
+      <dependency ref="components/jquery-dev-master"/>
+    </dependency>
+    <dependency ref="danielmarschall/oidplus-2.0.3.1">
+      <dependency ref="components/jquery-dev-master"/>
+      <dependency ref="components/jqueryui-dev-master"/>
+      <dependency ref="matthiasmullie/minify-dev-master"/>
+      <dependency ref="firebase/php-jwt-dev-main"/>
+      <dependency ref="tinymce/tinymce-8.7.0.0"/>
+      <dependency ref="dcodeio/bcrypt.js-2.4.3.0"/>
+      <dependency ref="danielmarschall/vnag-dev-master"/>
+      <dependency ref="danielmarschall/uuid_mac_utils-dev-master"/>
+      <dependency ref="danielmarschall/php_utils-dev-master"/>
+      <dependency ref="danielmarschall/fileformats-dev-master"/>
+      <dependency ref="danielmarschall/oidconverter-dev-master"/>
+      <dependency ref="spamspan/spamspan-dev-master"/>
+      <dependency ref="vakata/jstree-dev-master"/>
+      <dependency ref="twbs/bootstrap-dev-main"/>
+      <dependency ref="symfony/polyfill-mbstring-1.9999999.9999999.9999999-dev"/>
+      <dependency ref="gedmarc/layout-dev-master"/>
+      <dependency ref="emn178/js-sha3-dev-master"/>
+      <dependency ref="tweeb/tinymce-i18n-dev-master"/>
+      <dependency ref="phpseclib/phpseclib-dev-master"/>
+      <dependency ref="script47/bs5-utils-dev-master"/>
+      <dependency ref="danielmarschall/glip-dev-master"/>
+      <dependency ref="spomky-labs/php-punycode-dev-master"/>
+      <dependency ref="danielmarschall/oidinfo_api-dev-master"/>
+      <dependency ref="cyclonedx/cyclonedx-php-composer-dev-master"/>
+    </dependency>
+  </dependencies>
+</bom>

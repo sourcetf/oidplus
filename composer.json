@@ -123,7 +123,8 @@
         "danielmarschall/glip": "*",
         "ext-json": "*",
         "spomky-labs/php-punycode": "dev-master",
-        "danielmarschall/oidinfo_api": "dev-master"
+        "danielmarschall/oidinfo_api": "dev-master",
+        "cyclonedx/cyclonedx-php-composer": "^6.0@dev"
     },
     "config": {
         "secure-http": true,
@@ -131,7 +132,10 @@
             "*": "dist"
         },
         "autoloader-suffix": "OidPlusComposer",
-        "platform": {}
+        "platform": {},
+        "allow-plugins": {
+            "cyclonedx/cyclonedx-php-composer": true
+        }
     },
     "scripts": {
         "post-update-cmd": [

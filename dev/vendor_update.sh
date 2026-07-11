@@ -98,6 +98,7 @@ remove_vendor_rubbish ./
 # cannot be correctly extracted in Windows
 rm -rf vendor/bin
 rm -rf vendor/matthiasmullie/minify/bin
+rm -rf vendor/dcodeio/bcrypt.js/bin
 
 # Remove docker stuff since it might confuse services like synk
 rm vendor/matthiasmullie/minify/Dockerfile
