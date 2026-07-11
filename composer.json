@@ -1,7 +1,7 @@
 {
     "name": "danielmarschall/oidplus",
     "description": "OIDplus 2.0",
-    "version": "2.0.2.18",
+    "version": "2.0.3.0",
     "type": "project",
     "homepage": "https://www.oidplus.com/",
     "authors": [
@@ -99,11 +99,11 @@
         }
     },
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.2",
         "components/jquery": "*",
         "components/jqueryui": "*",
         "matthiasmullie/minify": "*",
-        "firebase/php-jwt": ">=6.0",
+        "firebase/php-jwt": "*",
         "tinymce/tinymce": "*",
         "dcodeio/bcrypt.js": "*",
         "danielmarschall/vnag": "*",

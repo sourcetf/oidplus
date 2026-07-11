@@ -93,8 +93,10 @@ class OIDplusAuthPluginBCrypt extends OIDplusAuthPlugin {
 	 * @return OIDplusRAAuthInfo
 	 * @throws OIDplusException
 	 */
-	public function generate(#[\SensitiveParameter]
-	                         string $password): OIDplusRAAuthInfo {
+	public function generate(
+		#[\SensitiveParameter]
+		string $password
+	): OIDplusRAAuthInfo {
 		if (strlen($password) > 72) throw new OIDplusException(_L('Password is too long (max %1 bytes)',72));
 		$cost = OIDplus::config()->getValue('ra_bcrypt_cost', 10);
 		$calc_authkey = password_hash($password, PASSWORD_BCRYPT, array("cost" => $cost));
@@ -108,16 +110,11 @@ class OIDplusAuthPluginBCrypt extends OIDplusAuthPlugin {
 	 * @return bool
 	 */
 	public function availableForHash(string &$reason): bool {
-		if (version_compare(PHP_VERSION, '7.4.0') >= 0) {
-			$ok = in_array('2',  password_algos()) ||
-			      in_array('2a', password_algos()) ||
-			      in_array('2b', password_algos()) ||
-			      in_array('2x', password_algos()) ||
-			      in_array('2y', password_algos());
-
-		} else {
-			$ok = defined('PASSWORD_BCRYPT');
-		}
+		$ok = in_array('2',  password_algos()) ||
+		      in_array('2a', password_algos()) ||
+		      in_array('2b', password_algos()) ||
+		      in_array('2x', password_algos()) ||
+		      in_array('2y', password_algos());
 
 		if ($ok) return true;
 

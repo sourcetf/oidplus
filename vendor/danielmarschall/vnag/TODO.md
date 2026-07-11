@@ -1,4 +1,20 @@
 
+
+Checked guideline 2026
+----------------------
+
+- Compared 2017 (wayback machine) and 2026 [Plugin Development Guidelines](https://nagios-plugins.org/doc/guidelines.html)
+  * (REMOVED) performance data: value, min and max in class `[-0-9.]`. Must all be the same UOM
+  * (REMOVED) value may be a literal "U" instead, this would indicate that the actual value couldn't be determined -- but it is still allowed?
+  * (REMOVED) KB, MB, TB, ... us, ms... -- but is it still allowed?
+- For plugins with more than one type of threshold (unsure: Does this mean you must implement all forms, or just one of them?)
+  * Use long options like --critical-time
+  * Use repeated options: check_load -w 10 -w 6 -w 4 -c 16 -c 10 -c 10
+  * Use comma-separated values: check_load -w 10,6,4 -c 16,10,10
+  * Express ranges with colons: check_procs -C httpd -w 1:20 -c 1:30
+  * Express lists with commas: -p 1000,1010,1050:1060,2000
+- Check if we support this: Don't use exec(), popen(), etc. to execute external commands without explicitly using the full path. This makes the plugin vulnerable to hijacking by a trojan horse earlier in the search path. Use spopen() for External Commands. If you have to execute external commands from within your plugin and you're writing it in C, use the spopen() function. The code for spopen() and spclose() is included with the core plugin distribution.
+
 TODO
 ----
 

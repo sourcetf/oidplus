@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'danielmarschall/oidplus',
-        'pretty_version' => '2.0.2.16',
-        'version' => '2.0.2.16',
+        'pretty_version' => '2.0.2.18',
+        'version' => '2.0.2.18',
         'reference' => null,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
@@ -13,7 +13,7 @@
         'components/jquery' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '8edc7785239bb8c2ad2b83302b856a1d61de60e7',
+            'reference' => '594f9dd922c3b12519c8d52bde744b79fd2ca816',
             'type' => 'component',
             'install_path' => __DIR__ . '/../components/jquery',
             'aliases' => array(
@@ -68,7 +68,7 @@
         'danielmarschall/oidinfo_api' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'f41d80c37f6ceeb3c7538e0985da97e42f22fb8b',
+            'reference' => 'fc588f5ad5154a48bd4b7ef68ad29942f00b392c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../danielmarschall/oidinfo_api',
             'aliases' => array(
@@ -77,8 +77,8 @@
             'dev_requirement' => false,
         ),
         'danielmarschall/oidplus' => array(
-            'pretty_version' => '2.0.2.16',
-            'version' => '2.0.2.16',
+            'pretty_version' => '2.0.2.18',
+            'version' => '2.0.2.18',
             'reference' => null,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
@@ -88,7 +88,7 @@
         'danielmarschall/php_utils' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'a1c52a7901179f4bd24c71153c4afd637c028421',
+            'reference' => '8a051046b244e32b61dee0dfbeef27f932a61d33',
             'type' => 'library',
             'install_path' => __DIR__ . '/../danielmarschall/php_utils',
             'aliases' => array(
@@ -99,7 +99,7 @@
         'danielmarschall/uuid_mac_utils' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '80fdd1d6d9176ec09a842d467e24d6f15bb2e74b',
+            'reference' => '947e85660b154b7c86816306695eceee8cd6250c',
             'type' => 'library',
             'install_path' => __DIR__ . '/../danielmarschall/uuid_mac_utils',
             'aliases' => array(
@@ -110,7 +110,7 @@
         'danielmarschall/vnag' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'd89912abc2b3ee512c63daccc7437ee962f0fd60',
+            'reference' => '82e606b0621e33eb785ef827e8a13cbff8e2194a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../danielmarschall/vnag',
             'aliases' => array(
@@ -137,12 +137,14 @@
             'dev_requirement' => false,
         ),
         'firebase/php-jwt' => array(
-            'pretty_version' => 'v6.10.0',
-            'version' => '6.10.0.0',
-            'reference' => 'a49db6f0a5033aef5143295342f1c95521b075ff',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'b374a5d1a4f1f67fadc2165cdb284645945e2fc0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../firebase/php-jwt',
-            'aliases' => array(),
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'gedmarc/layout' => array(
@@ -175,30 +177,23 @@
             'dev_requirement' => false,
         ),
         'paragonie/constant_time_encoding' => array(
-            'pretty_version' => 'v2.x-dev',
-            'version' => '2.9999999.9999999.9999999-dev',
-            'reference' => 'e30811f7bc69e4b5b6d5783e712c06c8eabf0226',
+            'pretty_version' => 'v3.1.3',
+            'version' => '3.1.3.0',
+            'reference' => 'd5b01a39b3415c2cd581d3bd3a3575c1ebbd8e77',
             'type' => 'library',
             'install_path' => __DIR__ . '/../paragonie/constant_time_encoding',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'paragonie/random_compat' => array(
-            'pretty_version' => 'v9.99.100',
-            'version' => '9.99.100.0',
-            'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../paragonie/random_compat',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'phpseclib/phpseclib' => array(
-            'pretty_version' => '3.0.x-dev',
-            'version' => '3.0.9999999.9999999-dev',
-            'reference' => '94bf93ecfb0ed3abc0911149a40bf1d1ae0c272d',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '8c3b39377e0db93dc51dd308123891f2cc7703fc',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpseclib/phpseclib',
-            'aliases' => array(),
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
             'dev_requirement' => false,
         ),
         'script47/bs5-utils' => array(
@@ -233,16 +228,25 @@
         'symfony/polyfill-mbstring' => array(
             'pretty_version' => '1.x-dev',
             'version' => '1.9999999.9999999.9999999-dev',
-            'reference' => '6d857f4d76bd4b343eac26d6b539585d2bc56493',
+            'reference' => 'd3d318bad5e7a1bfbd026009c8bfb8d8f99ae6b6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'symfony/polyfill-php82' => array(
+            'pretty_version' => '1.x-dev',
+            'version' => '1.9999999.9999999.9999999-dev',
+            'reference' => '002dc0cfe5fd4ed6033d48f27d4f19a486c4b04b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-php82',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'tinymce/tinymce' => array(
-            'pretty_version' => '8.3.2',
-            'version' => '8.3.2.0',
-            'reference' => '4b043a865f1978056f6649638b2e983c0624ff66',
+            'pretty_version' => '8.7.0',
+            'version' => '8.7.0.0',
+            'reference' => '147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f',
             'type' => 'component',
             'install_path' => __DIR__ . '/../tinymce/tinymce',
             'aliases' => array(),
@@ -251,7 +255,7 @@
         'twbs/bootstrap' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c82919e8970c7ebebb87ded191b815c76737cd04',
+            'reference' => 'b37afd77f69b97ae67722a9c3edb5ec5339544f3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twbs/bootstrap',
             'aliases' => array(

@@ -44,10 +44,10 @@ rm -rf vendor
 rm composer.lock
 
 # Download everything again
-# Use PHP 7.4, since this is our current minimum version we want to release in the full-build
+# Use PHP 8.2, since this is our current minimum version we want to release in the full-build
 # (Users who build the sources can use their own platform, of course)
 # see also below for 3 more occurrences of "composer update".
-./composer.phar config platform.php 7.4.0
+./composer.phar config platform.php 8.2.0
 ./composer.phar update --no-dev
 ./composer.phar config --unset platform.php
 
@@ -115,21 +115,21 @@ fi
 # -------
 
 rm -rf plugins/viathinksoft/publicPages/100_whois/whois/xml/vendor/
-./composer.phar config platform.php 7.4.0
+./composer.phar config platform.php 8.2.0
 ./composer.phar update --no-dev -d plugins/viathinksoft/publicPages/100_whois/whois/xml/
 ./composer.phar config --unset platform.php
 ./composer.phar license -d plugins/viathinksoft/publicPages/100_whois/whois/xml/ > plugins/viathinksoft/publicPages/100_whois/whois/xml/vendor/licenses
 remove_vendor_rubbish plugins/viathinksoft/publicPages/100_whois/whois/xml/
 
 rm -rf plugins/viathinksoft/publicPages/100_whois/whois/json/vendor/
-./composer.phar config platform.php 7.4.0
+./composer.phar config platform.php 8.2.0
 ./composer.phar update --no-dev -d plugins/viathinksoft/publicPages/100_whois/whois/json/
 ./composer.phar config --unset platform.php
 ./composer.phar license -d plugins/viathinksoft/publicPages/100_whois/whois/json/ > plugins/viathinksoft/publicPages/100_whois/whois/json/vendor/licenses
 remove_vendor_rubbish plugins/viathinksoft/publicPages/100_whois/whois/json/
 
 rm -rf plugins/viathinksoft/publicPages/002_rest_api/vendor/
-./composer.phar config platform.php 7.4.0
+./composer.phar config platform.php 8.2.0
 ./composer.phar update --no-dev -d plugins/viathinksoft/publicPages/002_rest_api/
 ./composer.phar config --unset platform.php
 ./composer.phar license -d plugins/viathinksoft/publicPages/002_rest_api/ > plugins/viathinksoft/publicPages/002_rest_api/vendor/licenses
@@ -146,36 +146,26 @@ curl https://raw.githubusercontent.com/WEID-Consortium/weid.info/gh-pages/WeidOi
 sed -i 's@namespace Frdl\\Weid;@namespace ViaThinkSoft\\OIDplus\\Plugins\\ObjectTypes\\OID;@g' plugins/viathinksoft/objectTypes/oid/WeidOidConverter.class.php
 sed -i 's@\\Frdl\\Weid\\WeidOidConverter::@WeidOidConverter::@g' plugins/viathinksoft/objectTypes/oid/WeidOidConverter.class.php
 
-# Various hotfixes
+# --- Various hotfixes ---
 
 # !!! Great tool for escaping these hotfixes: https://dwaves.de/tools/escape/ !!!
 # Then insert into   sed -i 's@...@...@g' filename
 
 # Apply hotfix: https://github.com/aywan/php-json-canonicalization/issues/1
+# (Still not fixed!)
 sed -i 's@\$formatted = rtrim(\$formatted, \x27\.0\x27);@\$formatted = rtrim(\$formatted, \x270\x27);\$formatted = rtrim(\$formatted, \x27\.\x27); \/\/Hotfix: https:\/\/github\.com\/aywan\/php-json-canonicalization\/issues\/1@g' plugins/viathinksoft/publicPages/100_whois/whois/json/vendor/aywan/php-json-canonicalization/src/Utils.php
 sed -i 's@\$parts\[0\] = rtrim(\$parts\[0\], \x27\.0\x27);@\$parts\[0\] = rtrim(\$parts\[0\], \x270\x27);\$parts\[0\] = rtrim(\$parts\[0\], \x27\.\x27); \/\/Hotfix: https:\/\/github\.com\/aywan\/php-json-canonicalization\/issues\/1@g' plugins/viathinksoft/publicPages/100_whois/whois/json/vendor/aywan/php-json-canonicalization/src/Utils.php
 
 # Fix symfony/polyfill-mbstring to make it compatible with PHP 8.2
 # The author does know about the problem (I have opened a GitHub issue), but they did not sync it from the symfony main repo (as polyfill-mbstring is just a fraction of it, for composer)
 # see https://github.com/symfony/polyfill-mbstring/pull/11
-sed -i 's@if (\\is_array(\$fromEncoding) || false !== strpos(\$fromEncoding, \x27,\x27)) {@if (\\is_array(\$fromEncoding) || (null !== \$fromEncoding \&\& false !== strpos(\$fromEncoding, \x27,\x27))) {@g' vendor/symfony/polyfill-mbstring/Mbstring.php
+### FIXED IN https://github.com/symfony/polyfill-mbstring/commit/d1f7f1a4c86c2ca7d9bba3c7e5e8ae3e1a268c1a
 
 # Fix https://github.com/firebase/php-jwt/pull/572 (also for older PHP 7.4 versions of the lib)
-cat vendor/firebase/php-jwt/src/JWT.php | grep -qE "\?stdClass"
-if [ $? -eq 1 ]; then
-	sed -i 's@int \$expiresAfter = null,@?int \$expiresAfter = null,@g' vendor/firebase/php-jwt/src/CachedKeySet.php
-	sed -i 's@string \$defaultAlg = null@?string \$defaultAlg = null@g' vendor/firebase/php-jwt/src/CachedKeySet.php
-	sed -i 's@sprintf(@\\sprintf(@g' vendor/firebase/php-jwt/src/CachedKeySet.php
-	sed -i 's@public static function parseKeySet(array \$jwks, string \$defaultAlg = null): array@public static function parseKeySet(array \$jwks, ?string \$defaultAlg = null): array@g' vendor/firebase/php-jwt/src/JWK.php
-	sed -i 's@sprintf(@\\sprintf(@g' vendor/firebase/php-jwt/src/JWK.php
-	sed -i 's@public static function parseKey(array \$jwk, string \$defaultAlg = null): ?Key@public static function parseKey(array \$jwk, ?string \$defaultAlg = null): ?Key@g' vendor/firebase/php-jwt/src/JWK.php
-	sed -i 's@stdClass \&\$headers = null@?stdClass \&\$headers = null@g' vendor/firebase/php-jwt/src/JWT.php
-	sed -i 's@string \$keyId = null,@?string \$keyId = null,@g' vendor/firebase/php-jwt/src/JWT.php
-	sed -i 's@array \$head = null@?array \$head = null@g' vendor/firebase/php-jwt/src/JWT.php
-fi
+### FIXED IN https://github.com/googleapis/php-jwt/commit/76808fa227f3811aa5cdb3bf81233714b799a5b5
 
 # Fix https://github.com/SergeyBrook/php-jws/pull/3 (also for older PHP 7.4 versions of the lib)
-sed -i 's@public function __construct(\$message, \$code = 0, Exception \$previous = null) {@public function __construct(\$message, \$code = 0, ?Exception \$previous = null) {@g' plugins/viathinksoft/publicPages/100_whois/whois/json/vendor/sergeybrook/php-jws/src/JWS/Exception/JwsException.php
+### FIXED IN https://github.com/SergeyBrook/php-jws/commit/2570011014deae26e85a49f6c7042fc490bb1246
 
 # Minify JS which have not been minified by the vendor
 chmod +x dev/minify_js.sh

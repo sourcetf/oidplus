@@ -2,6 +2,8 @@
 Install OIDplus to Microsoft IIS
 ================================
 
+ATTENTION: This tutorial was initially written for installation of PHP 7.4. Some information might be outdated. The current OIDplus version needs PHP 8.2, that might not be supported by Microsoft.
+
 (1) Install IIS using "Programs and Features" in the control panel
 ( Source: https://docs.microsoft.com/en-us/iis/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php )
 

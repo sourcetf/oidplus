@@ -932,14 +932,14 @@ class OIDplus extends OIDplusBaseClass {
 	}
 
 	/**
-	 * @return string[]|OIDplusObject[] Classname of a OIDplusObject class
+	 * @return array<class-string<OIDplusObject>> Classname of a OIDplusObject class
 	 */
 	public static function getEnabledObjectTypes(): array {
 		return self::getCurrentContext()->enabledObjectTypes;
 	}
 
 	/**
-	 * @return string[]|OIDplusObject[] Classname of a OIDplusObject class
+	 * @return array<class-string<OIDplusObject>> Classname of a OIDplusObject class
 	 */
 	public static function getDisabledObjectTypes(): array {
 		return self::getCurrentContext()->disabledObjectTypes;
@@ -1015,8 +1015,8 @@ class OIDplus extends OIDplusBaseClass {
 		$ary = array();
 		foreach (explode(',',$pluginFolderMasks) as $pluginFolderMask) {
 			$ary = array_merge($ary,
-				glob(self::localpath().'plugins/'.'*'.'/'.$pluginFolderMask.'/'.'*'.'/manifest.json'),
-				glob(self::getUserDataDir("plugins", true).'*'.'/'.$pluginFolderMask.'/'.'*'.'/manifest.json')
+				glob(self::localpath().'plugins/'.'*'.'/'.$pluginFolderMask.'/'.'*'.'/manifest.json') ?: [],
+				glob(self::getUserDataDir("plugins", true).'*'.'/'.$pluginFolderMask.'/'.'*'.'/manifest.json') ?: []
 			);
 		}
 
@@ -2376,8 +2376,8 @@ class OIDplus extends OIDplusBaseClass {
 				if (strpos($wildcard,'..') !== false) continue; // just to be sure
 
 				$translation_files = array_merge(
-					glob(__DIR__.'/../../plugins/'.'*'.'/language/'.$lang.'/'.$wildcard),
-					glob(self::getUserDataDir("plugins", true).'*'.'/language/'.$lang.'/'.$wildcard)
+					glob(__DIR__.'/../../plugins/'.'*'.'/language/'.$lang.'/'.$wildcard) ?: [],
+					glob(self::getUserDataDir("plugins", true).'*'.'/language/'.$lang.'/'.$wildcard) ?: []
 				);
 				sort($translation_files);
 				foreach ($translation_files as $translation_file) {
@@ -2414,7 +2414,7 @@ class OIDplus extends OIDplusBaseClass {
 		$i = 0;
 		do {
 			if (is_dir($dir.'/git')) {
-				$confs = @glob($dir.'/git/'.'*'.'/config');
+				$confs = @glob($dir.'/git/'.'*'.'/config') ?: [];
 				if ($confs) foreach ($confs as $conf) {
 					$cont = file_get_contents($conf);
 					if (isset(self::getEditionInfo()['gitrepo']) && (self::getEditionInfo()['gitrepo'] != '') && (strpos($cont, self::getEditionInfo()['gitrepo']) !== false)) {

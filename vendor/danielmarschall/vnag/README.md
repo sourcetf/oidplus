@@ -44,6 +44,7 @@ VNag comes with the following plugins pre-installed (in the bin directory):
 - **pmwiki_version**: Checks PmWiki installations for updates.
 - **roundcube_version**: Checks RoundCube installations for updates.
 - **smart**: Checks the SMART attributes of harddrives and warns when bad attributes are detected.
+- **synflood**: Checks for SYN_RECV flooding.
 - **viewvc_version**: Checks [ViewVC](https://github.com/viewvc/viewvc/) installations for updates.
 - **virtual_mem**: Checks the amount of virtual memory (physical memory + swap).
 - **webreader**: Reads the output of another VNag plugin transferred over HTTP.

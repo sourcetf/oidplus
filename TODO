@@ -1,11 +1,11 @@
-Planned 2025:
+Planned in the near future:
 - REST API: config (#40), attachments (#41), log events (#42)
 - Rename every "WHOIS" to "OID-IP" (also folder names)
 
-Sep 2024 in discussion:
+In discussion:
 - WTF wordpress like plugin test bundle (#67)
 
-May 2023 planned:
+Other things to consider:
 - Don't send "information object OIDs" (= Non-OIDs mapped to OID) OIDs or OID-AltIds to oid-base.com anymore
 	=> 17 May 2023 mitigated at VTS internal side for Information Object OIDs
 - In re Internet access:

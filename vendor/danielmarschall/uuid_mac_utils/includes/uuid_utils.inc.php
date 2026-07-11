@@ -2,8 +2,8 @@
 
 /*
  * UUID utils for PHP
- * Copyright 2011 - 2025 Daniel Marschall, ViaThinkSoft
- * Version 2025-06-16
+ * Copyright 2011 - 2026 Daniel Marschall, ViaThinkSoft
+ * Version 2026-05-23
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,20 @@
  * limitations under the License.
  */
 
-# This library requires either the GMP extension (or BCMath if gmp_supplement.inc.php is present)
+// This library requires either the GMP extension (or BCMath if gmp_supplement.inc.php is present)
 // TODO: If we are on 64 bit PHP (PHP_INT_SIZE > 4), then replace GMP with normal PHP operations
+
+$LEGACY_GUID_REGISTRY = [];
+$tmpfil = __DIR__ . '/../web-data/legacy_guid.txt';
+if (file_exists($tmpfil)) {
+	foreach (file($tmpfil) as $tmp) {
+		$tmp = trim($tmp);
+		if ($tmp == '') continue;
+		$ary = explode('=',$tmp,2);
+		$tmp_uuid = strtolower(substr(str_replace('-','',$ary[0]),1,32));
+		$LEGACY_GUID_REGISTRY[$tmp_uuid] = $ary[1];
+	}
+}
 
 if (file_exists($f = __DIR__ . '/mac_utils.inc.php')) include_once $f;
 else if (file_exists($f = __DIR__ . '/mac_utils.inc.phps')) include_once $f;
@@ -110,7 +122,7 @@ function uuid_info($uuid, $echo=true) {
 	$uuid = preg_replace('@[^0-9A-F]@i', '', $uuid);
 
 	$x = hexdec(substr($uuid, 16, 1));
-	     if ($x >= 14 /* 0b1110 */) $variant = 3;
+	     if ($x >= 14 /* 0b111_ */) $variant = 3;
 	else if ($x >= 12 /* 0b110_ */) $variant = 2;
 	else if ($x >=  8 /* 0b10__ */) $variant = 1;
 	else if ($x >=  0 /* 0b0___ */) $variant = 0;
@@ -200,13 +212,13 @@ function uuid_info($uuid, $echo=true) {
 				# Microsoft's AdressFamily: Unspecified	0	Unspecified address family.
 				# AIX 3.0 Manual:  0   unspec = Unspecified
 				$family_name = 'socket_$unspec (Unspecified)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 1) {
 				# Microsoft's AdressFamily: Unix	1	Unix local to host address.
 				# AIX 3.0 Manual:  1   unix = Local to host (pipes, portals)
 				$family_name = 'socket_$unix (Local to host, e.g. pipes, portals)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 2) {
 				# Microsoft's AdressFamily: InterNetwork	2	Address for IP version 4.
@@ -233,63 +245,63 @@ function uuid_info($uuid, $echo=true) {
 				# Microsoft's AdressFamily: ImpLink	3	ARPANET IMP address.
 				# AIX 3.0 Manual:  3   implink = ARPANET imp addresses
 				$family_name = 'socket_$implink (ARPANET imp addresses)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 4) {
 				# Microsoft's AdressFamily: Pup	4	Address for PUP protocols.
 				# AIX 3.0 Manual:  4   pup = Pup protocols (for example, BSP)
 				$family_name = 'socket_$pup (Pup protocols, e.g. BSP)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 5) {
 				# Microsoft's AdressFamily: Chaos	5	Address for MIT CHAOS protocols.
 				# AIX 3.0 Manual:  5   chaos = MIT CHAOS protocols
 				$family_name = 'socket_$chaos (MIT CHAOS protocols)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 6) {
 				# Microsoft's AdressFamily: NS	6	Address for Xerox NS protocols.
 				# Microsoft's AdressFamily: Ipx	6	IPX or SPX address.
 				# AIX 3.0 Manual:  6   ns = XEROX NS protocols
 				$family_name = 'socket_$ns (XEROX NS protocols)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 7) {
 				# Microsoft's AdressFamily: Osi	7	Address for OSI protocols.
 				# Microsoft's AdressFamily: Iso	7	Address for ISO protocols.
 				# AIX 3.0 Manual:  7   nbs = NBS protocols
 				$family_name = 'socket_$nbs (NBS protocols)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 8) {
 				# Microsoft's AdressFamily: Ecma	8	European Computer Manufacturers Association (ECMA) address.
 				# AIX 3.0 Manual:  8   ecma = European computer manufacturers
 				$family_name = 'socket_$ecma (European computer manufacturers protocols)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 9) {
 				# Microsoft's AdressFamily: DataKit	9	Address for Datakit protocols.
 				# AIX 3.0 Manual:  9   datakit = Datakit protocols
 				$family_name = 'socket_$datakit (Datakit protocols)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 10) {
 				# Microsoft's AdressFamily: Ccitt	10	Addresses for CCITT protocols, such as X.25.
 				# AIX 3.0 Manual:  A   ccitt = CCITT protocols (for example, X.25)
 				$family_name = 'socket_$ccitt (CCITT protocols, e.g. X.25)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 11) {
 				# Microsoft's AdressFamily: Sna	11	IBM SNA address.
 				# AIX 3.0 Manual:  B   sna = IBM SNA
 				$family_name = 'socket_$sna (IBM SNA)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 12) {
 				# Microsoft's AdressFamily: DecNet	12	DECnet address.
 				# AIX 3.0 Manual:  C   unspec2 = Unspecified
 				$family_name = 'socket_$unspec2 (Unspecified)';
-				$nodeid_desc = ''; // TODO: how to interprete the Node-ID of that family?
+				$nodeid_desc = ''; // TODO: how to interpret the Node-ID of that family?
 			}
 			else if ($family_dec == 13) {
 				# Microsoft's AdressFamily: DataLink	13	Direct data-link interface address.
@@ -874,6 +886,7 @@ function uuid_info($uuid, $echo=true) {
 					// END: hayageek UUIDv8 Interpretation
 
 					break;
+
 				default:
 					echo sprintf("%-32s %s\n", "Version:", "[0x".dechex($version)."] Unknown");
 					break;
@@ -881,10 +894,10 @@ function uuid_info($uuid, $echo=true) {
 
 			break;
 		case 2:
-			// TODO: Show byte order: 00112233-4455-6677-8899-aabbccddeeff => 33 22 11 00 55 44 77 66 88 99 aa bb cc dd ee ff
+			// TODO: Show byte order: 00112233-4455-6677-8899-aabbccddeeff => 33 22 11 00 55 44 77 66 88 99 aa bb cc dd ee ff (is this the reason for the weird SQL server order?)
 
-			// TODO: Is there any scheme in that legacy Microsoft GUIDs?
 			echo sprintf("%-32s %s\n", "Variant:", "[0b110] Reserved for Microsoft Corporation");
+
 			break;
 		case 3:
 			echo sprintf("%-32s %s\n", "Variant:", "[0b111] Reserved for future use");
@@ -940,6 +953,7 @@ function uuid_info($uuid, $echo=true) {
 	} else if (strtolower($signature) == '5ce32bd83b96') {
 		// HickelSOFT "SQL Server sortable UUID in C#"
 		// Version 2: Resolution of 1 milliseconds, random part of 18 bits, UTC time, UUIDv8 compliant.
+		// Do not use, it does not sort correctly!
 		// Example: 2088dc33-000d-8045-87e8-5ce32bd83b96
 		// Block 4
 		$unused2bits = hexdec(substr($uuid,16,1)) & 0x3;
@@ -1029,6 +1043,157 @@ function uuid_info($uuid, $echo=true) {
 
 	// END: HickelSOFT UUID
 
+	// START: UUIDv9 (unofficial)
+
+	$version = hexdec(substr($uuid, 12, 1));
+	if ($version == 9) {
+		echo "\n<u>Interpretation of <a href=\"https://uuidv9.jhunt.dev/\">unofficial UUIDv9 by J. Hunt</a> (only if version feature is enabled)</u>\n\n";
+
+		$data = str_split(substr($uuid, 0, 30), 2);
+		$polynomial = 0x07;
+		$crc = 0x00;
+		foreach ($data as $byte) {
+			$byteValue = hexdec($byte);
+			$crc ^= $byteValue;
+			for ($i = 0; $i < 8; $i++) {
+				if ($crc & 0x80) {
+					$crc = ($crc << 1) ^ $polynomial;
+				} else {
+					$crc <<= 1;
+				}
+				// $crc &= 0xFF;
+			}
+		}
+		$calculated = str_pad(dechex($crc & 0xFF), 2, '0', STR_PAD_LEFT);
+		if (substr($uuid, 30, 2) === $calculated) {
+			echo sprintf("%-32s %s\n", "CRC-8 Checksum:", "Present and valid");
+		} else {
+			echo sprintf("%-32s %s\n", "CRC-8 Checksum:", "Not available or invalid");
+		}
+
+		$matches = 0;
+		$maxTs = time() + 600; // 600s leeway for generating systems
+		$raw_var0 = substr($uuid, 0, 12) . substr($uuid, 13);
+		$raw_var1 = substr($uuid, 0, 12) . substr($uuid, 13, 3) . substr($uuid, 17);
+		$minTs_var0 = strtotime('2024-01-01 00:00:00'); // UUIDv9 v0.0.1 Release in 2024
+		$minTs_var1 = strtotime('2026-05-17 00:00:00'); // Start of UUIDv9 generating versions with valid UUID variant
+		for ($offset = 0; $offset <= 8; $offset++) {
+			for ($test_var=0; $test_var<=1; $test_var++) {
+				if (($test_var == 1) && ($variant != 1)) continue; // only check variant if we have a variant
+				// PHP generates 1-second timestamp in 8 nibbles
+				$candidate = substr(${"raw_var$test_var"}, $offset, 8);
+				$ts = hexdec($candidate);
+				if ($ts >= ${"minTs_var$test_var"} && $ts <= $maxTs) {
+					$prefix = substr(${"raw_var$test_var"}, 0, $offset);
+					$matches++;
+					echo sprintf("%-32s %s\n", "", "");
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Prefix:", "$offset byte prefix".rtrim(" $prefix"));
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Timestamp:", "$ts (".gmdate('Y-m-d H:i:s O',$ts).")");
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Resolution:", "1 second");
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Version:", "Version 9, ".($test_var ? "with" : "without")." variant bits");
+				}
+				// JS generates 0.001-second timestamp in 11 nibbles
+				$candidate = substr(${"raw_var$test_var"}, $offset, 11);
+				$ts = hexdec($candidate)/1000;
+				if ($ts >= ${"minTs_var$test_var"} && $ts <= $maxTs) {
+					$prefix = substr(${"raw_var$test_var"}, 0, $offset);
+					$matches++;
+					echo sprintf("%-32s %s\n", "", "");
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Prefix:", "$offset byte prefix".rtrim(" $prefix"));
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Timestamp:", "$ts (".gmdate('Y-m-d H:i:s O',$ts).")");
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Resolution:", "0.001 seconds");
+					echo sprintf("%-32s %s\n", "Timestamp Match $matches Version:", "Version 9, ".($test_var ? "with" : "without")." variant bits");
+				}
+			}
+		}
+		if ($matches == 0) {
+			echo sprintf("%-32s %s\n", "Timestamp Match:", "None found. Possibly random (non-sequential) UUID");
+		}
+	}
+
+	// END: UUIDv9 (unofficial)
+
+	// START: Microsoft UUIDs
+
+	$guid = sprintf(
+		'%s-%s-%s-%s-%s',
+		substr($uuid, 0, 8),
+		substr($uuid, 8, 4),
+		substr($uuid, 12, 4),
+		substr($uuid, 16, 4),
+		substr($uuid, 20, 12)
+	);
+
+	// ------------------------------------------------------------
+	// OLE GUID
+	// xxxxxxxx-yyyy-zzzz-c000-000000000046
+	// ------------------------------------------------------------
+	if (preg_match('/^([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-c000-000000000046$/i', $guid, $m)) {
+		echo "\n<u>Interpretation of Microsoft GUID</u>\n\n";
+		echo sprintf("%-32s %s\n", "Microsoft Type:", "OLE GUID (xxxxxxxx-yyyy-zzzz-c000-000000000046)");
+		echo sprintf("%-32s DEFINE_OLEGUID(..., 0x%sL, 0x%s, 0x%s)\n", "Win32 API Notation:",
+			strtoupper($m[1]),
+			strtoupper($m[2]),
+			strtoupper($m[3])
+		);
+	}
+
+	// ------------------------------------------------------------
+	// DAO GUID
+	// xxxxxxxx-0000-0010-8000-00aa006d2ea4
+	// ------------------------------------------------------------
+	if (preg_match('/^([0-9a-f]{8})-0000-0010-8000-00aa006d2ea4$/i', $guid, $m)) {
+		echo "\n<u>Interpretation of Microsoft GUID</u>\n\n";
+		echo sprintf("%-32s %s\n", "Microsoft Type:", "DAO GUID (xxxxxxxx-0000-0010-8000-00aa006d2ea4)");
+		echo sprintf("%-32s DEFINE_DAOGUID(..., 0x%sL)\n", "Win32 API Notation:",
+			strtoupper($m[1])
+		);
+	}
+
+	// ------------------------------------------------------------
+	// MediaSubtype
+	// xxxxxxxx-0000-0010-8000-00aa00389b71
+	// ------------------------------------------------------------
+	if (preg_match('/^([0-9a-f]{8})-0000-0010-8000-00aa00389b71$/i', $guid, $m)) {
+		echo "\n<u>Interpretation of Microsoft GUID</u>\n\n";
+		$value = strtoupper($m[1]);
+		$bytes = [
+			hexdec(substr($value, 6, 2)),
+			hexdec(substr($value, 4, 2)),
+			hexdec(substr($value, 2, 2)),
+			hexdec(substr($value, 0, 2)),
+		];
+		$hasZero = in_array(0, $bytes, true);
+		echo sprintf("%-32s %s\n", "Microsoft Type:", "MediaSubtype GUID (xxxxxxxx-0000-0010-8000-00aa00389b71)");
+		if (!$hasZero) {
+			$fourcc =
+				chr($bytes[0]) .
+				chr($bytes[1]) .
+				chr($bytes[2]) .
+				chr($bytes[3]);
+			echo sprintf("%-32s %s\n", "Subtype FourCC:", $fourcc);
+			echo sprintf("%-32s %s\n", "Win32 API Notation:", guidToCppDefine($guid, 'WMMEDIASUBTYPE_'.$fourcc));
+		} else {
+			$magic =
+				  ($bytes[3] << 24)
+				| ($bytes[2] << 16)
+				| ($bytes[1] << 8)
+				|  $bytes[0];
+			echo sprintf("%-32s %u (0x%X)\n", "Subtype Number:", $magic, $magic);
+			echo sprintf("%-32s %s\n", "Win32 API Notation:", guidToCppDefine($guid, 'WMMEDIASUBTYPE_...'));
+		}
+	}
+
+	// END: Microsoft UUIDs
+
+	global $LEGACY_GUID_REGISTRY;
+	if (isset($LEGACY_GUID_REGISTRY[$uuid])) {
+		echo "\n<u>References: <a href=\"https://github.com/danielmarschall/LegacyGuidFinder/tree/main\">Known GUID List</a></u>\n\n";
+		echo sprintf("%-32s %s\n", "Known GUID:", $LEGACY_GUID_REGISTRY[$uuid]);
+	}
+
+	echo "\nLookup this UUID at <a target=\"_blank\" href=\"https://www.magnumdb.com/search?q=$guid\">MagnumDB</a>, <a target=\"_blank\" href=\"https://google.com/search?q=$guid\">Google</a>, <a target=\"_blank\" href=\"https://bing.com/search?q=$guid\">Bing</a>\n";
+
 	if (!$echo) {
 		$out = ob_get_contents();
 		ob_end_clean();
@@ -1041,6 +1206,38 @@ function uuid_info($uuid, $echo=true) {
 function uuid_canonize($uuid) {
 	if (!uuid_valid($uuid)) return false;
 	return oid_to_uuid(uuid_to_oid($uuid));
+}
+
+function guidToCppDefine(string $uuid, string $name = 'GUID_...'): string {
+    // lowercase + {} und - entfernen
+    $clean = strtolower($uuid);
+    $clean = str_replace(['{', '}', '-'], '', $clean);
+
+    if (strlen($clean) !== 32) {
+        return "Invalid GUID";
+    }
+
+    // GUID Teile
+    $data1 = substr($clean, 0, 8);
+    $data2 = substr($clean, 8, 4);
+    $data3 = substr($clean, 12, 4);
+
+    // letzte 8 Bytes
+    $tail = substr($clean, 16);
+
+    $bytes = [];
+    for ($i = 0; $i < strlen($tail); $i += 2) {
+        $bytes[] = '0x' . strtoupper(substr($tail, $i, 2));
+    }
+
+    return sprintf(
+        'DEFINE_GUID(%s, 0x%sL, 0x%s, 0x%s, %s)',
+        $name,
+        strtoupper($data1),
+        strtoupper($data2),
+        strtoupper($data3),
+        implode(', ', $bytes)
+    );
 }
 
 /*

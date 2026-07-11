@@ -110,22 +110,14 @@ class OIDplusAuthPluginArgon2 extends OIDplusAuthPlugin {
 	 * @return bool
 	 */
 	private function supportsArgon2i(): bool {
-		if (version_compare(PHP_VERSION, '7.4.0') >= 0) {
-			return in_array('argon2i', password_algos());
-		} else {
-			return defined('PASSWORD_ARGON2I');
-		}
+		return in_array('argon2i', password_algos());
 	}
 
 	/**
 	 * @return bool
 	 */
 	private function supportsArgon2id(): bool {
-		if (version_compare(PHP_VERSION, '7.4.0') >= 0) {
-			return in_array('argon2id', password_algos());
-		} else {
-			return defined('PASSWORD_ARGON2ID');
-		}
+		return in_array('argon2id', password_algos());
 	}
 
 	/**

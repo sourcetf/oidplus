@@ -3,6 +3,15 @@
 		"dummy": "<?php die('For security reasons, this file can only be accessed locally (without PHP).'.base64_decode('IgogICAgfQpdCg==')); ?>"
 	},
 	{
+		"version": "2.0.3.0",
+		"date": "2026-07-11 11:00:00 +0200",
+		"author": "Daniel Marschall (ViaThinkSoft)",
+		"changes": [
+			"Vendor updates incl. security fixes",
+			"Drop support for PHP 7.4 - 8.1"
+		]
+	},
+	{
 		"version": "2.0.2.18",
 		"date": "2026-07-11 00:50:00 +0200",
 		"author": "Daniel Marschall (ViaThinkSoft)",

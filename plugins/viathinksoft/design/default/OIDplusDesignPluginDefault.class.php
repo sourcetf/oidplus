@@ -17,7 +17,7 @@
  * limitations under the License.
  */
 
-namespace ViaThinkSoft\OIDplus\Plugins\Design\DefaultDesign;
+namespace ViaThinkSoft\OIDplus\Plugins\Design\Default;
 
 use ViaThinkSoft\OIDplus\Core\OIDplusDesignPlugin;
 

@@ -2,7 +2,7 @@
 
 /*
 
-      VNag - Nagios Framework for PHP                  (C) 2014-2023
+      VNag - Nagios Framework for PHP                  (C) 2014-2026
       __     ___      _____ _     _       _     ____         __ _
       \ \   / (_) __ |_   _| |__ (_)_ __ | | __/ ___|  ___  / _| |_
        \ \ / /| |/ _` || | | '_ \| | '_ \| |/ /\___ \ / _ \| |_| __|
@@ -11,7 +11,7 @@
 
       Developed by Daniel Marschall             www.viathinksoft.com
       Licensed under the terms of the Apache 2.0 license
-      Revision 2023-12-17
+      Revision 2026-05-27
 
 */
 
@@ -58,7 +58,7 @@ function _empty($x) {
 }
 
 abstract class VNag {
-	/*public*/ const VNAG_VERSION = '2023-12-17';
+	/*public*/ const VNAG_VERSION = '2026-05-27';
 
 	// Status 0..3 for STATUSMODEL_SERVICE (the default status model):
 	# The guideline states: "Higher-level errors (such as name resolution errors, socket timeouts, etc) are outside of the control of plugins and should generally NOT be reported as UNKNOWN states."
@@ -156,7 +156,7 @@ abstract class VNag {
 
 	// These settings should be set by derivated classes where the user intuitively expects the
 	// warning (w) or critical (c) parameter to mean something else than defined in the development guidelines.
-	// Usually, the single value "-w X" means the same like "-w X:X", which means everything except X is bad.
+	// Usually, the single value "-w X" means the same like "-w 0:X", which means everything below 0 or above X is bad.
 	// This behavior is VNag::SINGLEVALUE_RANGE_DEFAULT.
 	// But for plugins e.g. for checking disk space, the user expects the argument "-w X" to mean
 	// "everything below X is bad" (if X is defined as free disk space).
@@ -168,8 +168,8 @@ abstract class VNag {
 	protected $criticalSingleValueRangeBehaviors = array(self::SINGLEVALUE_RANGE_DEFAULT);
 
 	// Default behavior according to the development guidelines:
-	//  x means  x:x, which means, everything except x% is bad.
-	// @x means @x:x, which means, x is bad and everything else is good.
+	//  x means  0:x, which means, x>10 is bad
+	// @x means @0:x, which means, x<=10 is bad
 	const SINGLEVALUE_RANGE_DEFAULT = 0;
 
 	// The single value x means, everything > x is bad. @x is not defined.
@@ -1048,6 +1048,14 @@ abstract class VNag {
 		throw new VNagException(VNagLang::$cannotGetCacheDir);
 	}
 
+	private static function chromeMajor(): int {
+		// https://chromestatus.com/roadmap
+		$baseVersion = 149;
+		$baseDate = strtotime('2026-05-20');
+		$days = (time() - $baseDate) / 86400;
+		return $baseVersion + floor($days / 28);
+	}
+
 	// This is not used by the framework itself, but can be useful for a lot of plugins
 	protected function url_get_contents($url, $max_cache_time=1*60*60, $context=null) {
 		$cache_file = $this->get_cache_dir().'/'.hash('sha256',$url);
@@ -1055,11 +1063,22 @@ abstract class VNag {
 			$cont = @file_get_contents($cache_file);
 			if ($cont === false) throw new Exception("Failed to get contents from $cache_file");
 		} else {
+			$parts = parse_url($url);
 			$options = array(
 			  'http'=>array(
 			    'method'=>"GET",
-			    'header'=>"Accept-language: en\r\n" .
-			              "User-Agent: Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.102011-10-16 20:23:10\r\n"
+			    'header'=>
+		              "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/".self::chromeMajor().".0.0.0 Safari/537.36\r\n".
+		              "Accept: */"."*\r\n".
+		              "Accept-Language: en-US,de;q=0.9,en-GB;q=0.8,en;q=0.7\r\n".
+		              "Referer: " . $parts['scheme'] . "://" . $parts['host'] . "/\r\n".
+		              "Sec-Fetch-Dest: script\r\n".
+		              "Sec-Fetch-Mode: no-cors\r\n".
+		              "Sec-Fetch-Site: cross-site\r\n".
+		              "Sec-Ch-Ua: \"Chromium\";v=\"".self::chromeMajor()."\", \"Google Chrome\";v=\"".self::chromeMajor()."\", \"Not:A-Brand\";v=\"99\"\r\n".
+		              "Sec-Ch-Ua-Mobile: ?0\r\n".
+		              "Sec-Ch-Ua-Platform: \"Windows\"\r\n"
+
 			  )
 			);
 			if (is_null($context)) $context = stream_context_create($options);

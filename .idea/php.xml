@@ -45,7 +45,7 @@
       <path value="$PROJECT_DIR$/vendor/spomky-labs/php-punycode" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />
   <component name="PhpStanOptionsConfiguration">
     <option name="autoload" value="D:\SVN\OIDplus\trunk\includes\oidplus.inc.php" />
     <option name="config" value="D:\SVN\OIDplus\trunk\phpstan.neon.dist" />
