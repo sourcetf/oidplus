@@ -29,15 +29,15 @@
 
 $dir = __DIR__ . '/../../';
 
-// TODO: Support the case messages*.xml (for than 1 message file per language)
+// TODO: Support the case messages*.json (for than 1 message file per language)
 //       Not sure how to solve it, because if there is a string we do not have,
 //       to which file do we add it?
 
 // ---
 
 $langs = array();
-// TODO: Instead of hard-coding messages.xml, read it from manifest.xml
-$tmp = glob($dir.'/plugins/'.'*'.'/language/'.'*'.'/messages.xml');
+// TODO: Instead of hard-coding messages.json, read it from manifest.json
+$tmp = glob($dir.'/plugins/'.'*'.'/language/'.'*'.'/messages.json');
 foreach ($tmp as $tmp2) {
 	$tmp3 = explode('/', $tmp2);
 	$lang = $tmp3[count($tmp3)-2];
@@ -90,18 +90,16 @@ sort($all_strings);
 // ---
 
 foreach ($langs as $lang) {
-	// TODO: Instead of hard-coding messages.xml, read it from manifest.xml
-	$translation_files = glob($dir.'/plugins/'.'*'.'/language/'.$lang.'/messages.xml');
+	// TODO: Instead of hard-coding messages.json, read it from manifest.json
+	$translation_files = glob($dir.'/plugins/'.'*'.'/language/'.$lang.'/messages.json');
 	$translation_file = count($translation_files) > 0 ? $translation_files[0] : null;
 	if (file_exists($translation_file)) {
-		$xml = simplexml_load_string(file_get_contents($translation_file));
-		if (!$xml) {
+		$json = json_decode(file_get_contents($translation_file));
+		if ($json === null) {
 			echo "STOP: Cannot load $translation_file\n";
 			continue;
 		}
-		foreach ($xml->message as $msg) {
-			$src = trim($msg->source->__toString());
-			$dst = trim($msg->target->__toString());
+		foreach ($json as $src => $dst) {
 			$translation_array[$src] = $dst;
 		}
 	}
@@ -114,38 +112,26 @@ foreach ($langs as $lang) {
 	$stats_translated = 0;
 	$stats_not_translated = 0;
 
-	$cont  = '<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>'."\n";
-	$cont .= '<translation'."\n";
-	$cont .= '	xmlns="urn:oid:1.3.6.1.4.1.37476.2.5.2.5.4.1"'."\n";
-	$cont .= '	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"'."\n";
-	$cont .= '	xsi:schemaLocation="urn:oid:1.3.6.1.4.1.37476.2.5.2.5.4.1 https://hosted.oidplus.com/viathinksoft/plugins/messages.xsd">'."\n";
-	$cont .= "\n";
+	$json = array();
 	foreach ($all_strings as $string) {
 		$stats_total++;
 		$string = trim($string);
-		$cont .= "	<message>\n";
-		$cont .= "		<source><![CDATA[\n";
-		$cont .= "		$string\n";
-		$cont .= "		]]></source>\n";
+		$src = $string;
 		if (isset($translation_array[$string]) && !empty($translation_array[$string])) {
 			$translation_array[$string] = trim($translation_array[$string]);
 			$stats_translated++;
 			if (substr_count($string,'%') != substr_count($translation_array[$string],'%')) {
 				echo "\tAttention: Number of %-Replacements differs at translation of message '$string'\n";
 			}
-			$cont .= "		<target><![CDATA[\n";
-			$cont .= "		".$translation_array[$string]."\n";
-			$cont .= "		]]></target>\n";
 			test_missing_placeholder($translation_array[$string]);
+			$dst = $translation_array[$string];
 		} else {
+			$dst = '!!!TODO!!!';
 			$stats_not_translated++;
-			$cont .= "		<target><![CDATA[\n";
-			$cont .= "		]]></target><!-- TODO: TRANSLATE -->\n";
 		}
-		$cont .= "	</message>\n";
+		$json[$src] = $dst;
 	}
-	$cont .= "</translation>\n";
-	file_put_contents($translation_file, $cont);
+	file_put_contents($translation_file, json_encode($json, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 
 	echo "\t$stats_total total messages, $stats_translated already translated (".round($stats_translated/$stats_total*100,2)."%), $stats_not_translated not translated (".round($stats_not_translated/$stats_total*100,2)."%)\n";
 	echo "\tDone...\n";

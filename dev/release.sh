@@ -69,15 +69,15 @@ if [ -d "$DIR"/../.git ]; then
 	done
 fi
 
-# 3. Run dev/translation/message_regenerate.phps and translate things which are missing in plugins/viathinksoft/language/dede/messages.xml (search for "TODO")
+# 3. Run dev/translation/message_regenerate.phps and translate things which are missing in plugins/viathinksoft/language/dede/messages.json (search for "TODO")
 echo "3. Checking translation..."
 while true; do
 	"$DIR"/translation/message_regenerate.phps
-	cat "$DIR"/../plugins/viathinksoft/language/dede/messages.xml | grep TODO > /dev/null
+	cat "$DIR"/../plugins/viathinksoft/language/dede/messages.json | grep '!!!TODO!!!' > /dev/null
 	if [ $? -eq 0 ]; then
 		echo "Problem: There are untranslated strings! Please translate them."
 		sleep 2
-		nano "$DIR"/../plugins/viathinksoft/language/dede/messages.xml
+		nano "$DIR"/../plugins/viathinksoft/language/dede/messages.json
 	else
 		break
 	fi

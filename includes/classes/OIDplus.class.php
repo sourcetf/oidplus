@@ -2336,21 +2336,37 @@ class OIDplus extends OIDplusBaseClass {
 		$cache_file = self::getUserDataDir("cache").'translation_'.md5($translation_file).'.ser';
 		if (file_exists($cache_file) && (filemtime($cache_file) == filemtime($translation_file))) {
 			$cac = @unserialize(file_get_contents($cache_file));
-			if ($cac) return $cac;
+			if ($cac !== false) return $cac;
 		}
 
-		// If not successful, then load the XML file
-		$xml = @simplexml_load_string(file_get_contents($translation_file));
-		if (!$xml) return array(); // if there is an UTF-8 or parsing error, don't output any errors, otherwise the JavaScript is corrupt and the page won't render correctly
-		$cac = array();
-		foreach ($xml->message as $msg) {
-			$src = trim($msg->source->__toString());
-			$dst = trim($msg->target->__toString());
-			$cac[$src] = $dst;
+		// If not successful, then load the XML or JSON file
+		if (substr($translation_file,-4) == '.xml') {
+			$xml = @simplexml_load_string(file_get_contents($translation_file));
+			if (!$xml) return array(); // if there is an UTF-8 or parsing error, don't output any errors, otherwise the JavaScript is corrupt and the page won't render correctly
+			$cac = array();
+			foreach ($xml->message as $msg) {
+				$src = trim($msg->source->__toString());
+				$dst = trim($msg->target->__toString());
+				$cac[$src] = $dst;
+			}
+			@file_put_contents($cache_file,serialize($cac));
+			@touch($cache_file,filemtime($translation_file));
+			@file_put_contents(substr($translation_file,0,strlen($translation_file)-4).".json",json_encode($cac, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT)); // auto migrate to JSON
+			return $cac;
+		} else if (substr($translation_file,-5) == '.json') {
+			$json = @json_decode(file_get_contents($translation_file));
+			if ($json === null) return array();
+			$cac = array();
+			foreach ($json as $src => $dst) {
+				if ($dst == '!!!TODO!!!') $dst = $src; // untranslated
+				$cac[$src] = $dst;
+			}
+			@file_put_contents($cache_file,serialize($cac));
+			@touch($cache_file,filemtime($translation_file));
+			return $cac;
+		} else {
+			return array();
 		}
-		@file_put_contents($cache_file,serialize($cac));
-		@touch($cache_file,filemtime($translation_file));
-		return $cac;
 	}
 
 	/**

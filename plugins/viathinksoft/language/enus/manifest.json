@@ -17,7 +17,7 @@
 		"language": {
 			"code": "enus",
 			"flag": "img/flag.png",
-			"messages": "messages*.xml"
+			"messages": "messages*.json"
 		}
 	}
 }

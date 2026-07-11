@@ -26,7 +26,8 @@ $dir = __DIR__ . '/../../';
 // ---
 
 $langs = array();
-$tmp = glob($dir.'/plugins/'.'*'.'/language/'.'*'.'/messages.xml');
+// TODO: Instead of hard-coding messages.json, read it from manifest.json
+$tmp = glob($dir.'/plugins/'.'*'.'/language/'.'*'.'/messages.json');
 foreach ($tmp as $tmp2) {
 	$tmp3 = explode('/', $tmp2);
 	$lang = $tmp3[count($tmp3)-2];
@@ -66,16 +67,15 @@ echo "Done: enus\n";
 
 foreach ($langs as $lang) {
 	$all_strings = array();
-	$translation_files = glob($dir.'/plugins/'.'*'.'/language/'.$lang.'/messages.xml');
+	$translation_files = glob($dir.'/plugins/'.'*'.'/language/'.$lang.'/messages.json');
 	$translation_file = count($translation_files) > 0 ? $translation_files[0] : null;
 	if (file_exists($translation_file)) {
-	$xml = simplexml_load_string(file_get_contents($translation_file));
-	if (!$xml) {
-		echo "STOP: Cannot load $translation_file\n";
-		continue;
-	}
-	foreach ($xml->message as $msg) {
-			$dst = trim($msg->target->__toString());
+		$json = json_decode(file_get_contents($translation_file));
+		if ($json === null) {
+			echo "STOP: Cannot load $translation_file\n";
+			continue;
+		}
+		foreach ($json as $src => $dst) {
 			$all_strings[] = $dst;
 		}
 	}

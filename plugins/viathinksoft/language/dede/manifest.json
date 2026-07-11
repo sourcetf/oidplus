@@ -17,7 +17,7 @@
 		"language": {
 			"code": "dede",
 			"flag": "img/flag.png",
-			"messages": "messages*.xml"
+			"messages": "messages*.json"
 		}
 	}
 }

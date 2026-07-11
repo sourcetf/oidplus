@@ -3,6 +3,14 @@
 		"dummy": "<?php die('For security reasons, this file can only be accessed locally (without PHP).'.base64_decode('IgogICAgfQpdCg==')); ?>"
 	},
 	{
+		"version": "2.0.3.1",
+		"date": "2026-07-11 11:50:00 +0200",
+		"author": "Daniel Marschall (ViaThinkSoft)",
+		"changes": [
+			"Translation files are now saved JSON instead of XML"
+		]
+	},
+	{
 		"version": "2.0.3.0",
 		"date": "2026-07-11 11:00:00 +0200",
 		"author": "Daniel Marschall (ViaThinkSoft)",
