@@ -5,13 +5,18 @@
 # svn propget svn:ignore */*/* 2>/dev/null
 # svn propget svn:ignore */*/*/* 2>/dev/null
 # svn propget svn:ignore */*/*/*/* 2>/dev/null
+# svn propget svn:ignore */*/*/*/*/* 2>/dev/null
+# svn propget svn:ignore */*/*/*/*/*/* 2>/dev/null
 # ...
 
+composer.phar
 composer.lock
 oidplus_version.txt
 .version.php
 update.tmp.php
 update_*.tmp.php
+.rnd
+webfan.setup.php
 
 # Recommendation in https://phpstan.org/config-reference
 # "The usual practice is to have phpstan.neon.dist under version control,
@@ -19,6 +24,9 @@ update_*.tmp.php
 # (on their own computer or on a continuous integration server) by creating
 # phpstan.neon that's present in .gitignore file."
 phpstan.neon
+phpstan.phar
+phpstan.bat
+phpstan.sh
 
 # (ViaThinkSoft internal)
 dev/oidplus_1_with_token.html
@@ -65,3 +73,10 @@ userdata/tenant/*
 
 userdata/welcome/welcome.html
 !userdata/welcome/info.txt
+
+userdata_pub/plugins/*
+!userdata_pub/plugins/info.txt
+
+plugins/viathinksoft/publicPages/100_whois/whois/json/composer.lock
+
+plugins/viathinksoft/publicPages/100_whois/whois/xml/composer.lock

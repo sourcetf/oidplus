@@ -71,15 +71,18 @@ class OIDplusPagePublicRdap extends OIDplusPagePluginPublic
 			$rel_url = preg_replace('@^'.preg_quote($expect,'@').'@', '', $rel_url);
 
 			$rel_url = explode('?', $rel_url, 2)[0];
-			$ary = explode('/', $rel_url, 2);
-			$ns = $ary[0];
-			$id = $ary[1] ?? null;
-			if ($ns && $id) {
+
+			[$ns, $id] = explode('/', $rel_url, 2) + [null, null];
+			$ns = $ns ?: null;
+			$id = $id ?: null;
+			if ($ns !== null && $id !== null) {
 				$query = "$ns:$id";
 				$x = new OIDplusRDAP();
 				list($out_content, $out_type) = $x->rdapQuery($query);
 				if ($out_type) header('Content-Type:'.$out_type);
 				echo $out_content;
+			} else {
+				http_response_code(400);
 			}
 
 			OIDplus::invoke_shutdown();
