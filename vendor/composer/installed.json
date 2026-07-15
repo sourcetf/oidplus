@@ -599,19 +599,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/danielmarschall/php_utils.git",
-                "reference": "8a051046b244e32b61dee0dfbeef27f932a61d33"
+                "reference": "6bafcfe9dfc25c8c0951c6774741a5dcb6a13512"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danielmarschall/php_utils/zipball/8a051046b244e32b61dee0dfbeef27f932a61d33",
-                "reference": "8a051046b244e32b61dee0dfbeef27f932a61d33",
+                "url": "https://api.github.com/repos/danielmarschall/php_utils/zipball/6bafcfe9dfc25c8c0951c6774741a5dcb6a13512",
+                "reference": "6bafcfe9dfc25c8c0951c6774741a5dcb6a13512",
                 "shasum": ""
             },
             "require": {
                 "ext-zlib": "*",
                 "php": ">=7.0"
             },
-            "time": "2026-05-12T11:10:11+00:00",
+            "time": "2026-07-15T16:04:28+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -1316,12 +1316,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "8c3b39377e0db93dc51dd308123891f2cc7703fc"
+                "reference": "6a5a0c64571dbd86a417ba342e1bdd6bc85171cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8c3b39377e0db93dc51dd308123891f2cc7703fc",
-                "reference": "8c3b39377e0db93dc51dd308123891f2cc7703fc",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/6a5a0c64571dbd86a417ba342e1bdd6bc85171cb",
+                "reference": "6a5a0c64571dbd86a417ba342e1bdd6bc85171cb",
                 "shasum": ""
             },
             "require": {
@@ -1343,7 +1343,7 @@
                 "ext-libsodium": "SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.",
                 "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
             },
-            "time": "2026-06-23T13:56:22+00:00",
+            "time": "2026-07-15T13:11:16+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -1701,20 +1701,20 @@
         },
         {
             "name": "tinymce/tinymce",
-            "version": "8.7.0",
-            "version_normalized": "8.7.0.0",
+            "version": "8.8.0",
+            "version_normalized": "8.8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tinymce/tinymce-dist.git",
-                "reference": "147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f"
+                "reference": "23137d1b2f95cdd68f304292685157ba090e7518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f",
-                "reference": "147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f",
+                "url": "https://api.github.com/repos/tinymce/tinymce-dist/zipball/23137d1b2f95cdd68f304292685157ba090e7518",
+                "reference": "23137d1b2f95cdd68f304292685157ba090e7518",
                 "shasum": ""
             },
-            "time": "2026-07-01T03:39:33+00:00",
+            "time": "2026-07-15T02:36:42+00:00",
             "type": "component",
             "extra": {
                 "component": {
@@ -1757,7 +1757,7 @@
                 "wysiwyg"
             ],
             "support": {
-                "source": "https://github.com/tinymce/tinymce-dist/tree/8.7.0"
+                "source": "https://github.com/tinymce/tinymce-dist/tree/8.8.0"
             },
             "install-path": "../tinymce/tinymce"
         },
@@ -1768,18 +1768,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "b37afd77f69b97ae67722a9c3edb5ec5339544f3"
+                "reference": "e8c978daefe39540c67a82fdd72dfc0c4a267ff1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/b37afd77f69b97ae67722a9c3edb5ec5339544f3",
-                "reference": "b37afd77f69b97ae67722a9c3edb5ec5339544f3",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/e8c978daefe39540c67a82fdd72dfc0c4a267ff1",
+                "reference": "e8c978daefe39540c67a82fdd72dfc0c4a267ff1",
                 "shasum": ""
             },
             "replace": {
                 "twitter/bootstrap": "self.version"
             },
-            "time": "2026-07-08T16:23:16+00:00",
+            "time": "2026-07-14T16:01:40+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",

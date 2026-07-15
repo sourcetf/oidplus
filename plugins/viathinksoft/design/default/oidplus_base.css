@@ -31,6 +31,10 @@
  **   extended, and you need to apply the changes according to the master file.     **
  *************************************************************************************/
 
+:root {
+    color-scheme: light;
+}
+
 /* Logo */
 
 @media only screen and (min-width: 801px) {

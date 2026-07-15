@@ -22,8 +22,8 @@ danielmarschall/oidconverter     9999999-dev cd036ff Apache-2.0
 danielmarschall/oidconverter     dev-master cd036ff  Apache-2.0                
 danielmarschall/oidinfo_api      9999999-dev fc588f5 Apache-2.0                
 danielmarschall/oidinfo_api      dev-master fc588f5  Apache-2.0                
-danielmarschall/php_utils        9999999-dev 8a05104 Apache-2.0                
-danielmarschall/php_utils        dev-master 8a05104  Apache-2.0                
+danielmarschall/php_utils        9999999-dev 6bafcfe Apache-2.0                
+danielmarschall/php_utils        dev-master 6bafcfe  Apache-2.0                
 danielmarschall/uuid_mac_utils   9999999-dev 947e856 Apache-2.0                
 danielmarschall/uuid_mac_utils   dev-master 947e856  Apache-2.0                
 danielmarschall/vnag             9999999-dev 82e606b Apache-2.0                
@@ -44,17 +44,17 @@ opis/uri                         1.x-dev e135d17     Apache-2.0
 opis/uri                         dev-master e135d17  Apache-2.0                
 package-url/packageurl-php       1.1.2               MIT                       
 paragonie/constant_time_encoding v3.1.3              MIT                       
-phpseclib/phpseclib              9999999-dev 8c3b393 MIT                       
-phpseclib/phpseclib              dev-master 8c3b393  MIT                       
+phpseclib/phpseclib              9999999-dev 6a5a0c6 MIT                       
+phpseclib/phpseclib              dev-master 6a5a0c6  MIT                       
 script47/bs5-utils               master master       MIT                       
 spamspan/spamspan                master master       GPL-2.0-only              
 spomky-labs/php-punycode         9999999-dev d12fe5c MIT                       
 spomky-labs/php-punycode         dev-master d12fe5c  MIT                       
 symfony/polyfill-mbstring        1.x-dev d3d318b     MIT                       
 symfony/polyfill-php82           1.x-dev 002dc0c     MIT                       
-tinymce/tinymce                  8.7.0               SEE LICENSE IN license.md 
-twbs/bootstrap                   9999999-dev b37afd7 MIT                       
-twbs/bootstrap                   dev-main b37afd7    MIT                       
+tinymce/tinymce                  8.8.0               SEE LICENSE IN license.md 
+twbs/bootstrap                   9999999-dev e8c978d MIT                       
+twbs/bootstrap                   dev-main e8c978d    MIT                       
 tweeb/tinymce-i18n               9999999-dev 058da08 MIT                       
 tweeb/tinymce-i18n               dev-master 058da08  MIT                       
 vakata/jstree                    9999999-dev 6256df0 MIT                       

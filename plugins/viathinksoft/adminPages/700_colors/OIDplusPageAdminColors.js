@@ -175,3 +175,29 @@ var OIDplusPageAdminColors = {
 	}
 
 };
+
+// This method removes class="light-mode" or class="dark-mode" in the <html> section that is added by the webbrowser.
+// It is required because if the webbrowser sets these classes, then SwaggerUI behaves (and is dark) while the other
+// style elements of the designs follow their own design rules, if they are not compatible with multi-themes.
+// So, we want that SwaggerUI listens to the design and not to the browser.
+// If someone wants pure dark mode, then they should use a third-party plugin like DarkReader.
+function updateColorSchemeClass() {
+    const html = document.documentElement;
+
+    const scheme = getComputedStyle(html)
+        .getPropertyValue("color-scheme")
+        .trim();
+
+    html.classList.remove("dark-mode", "light-mode");
+
+    if (scheme.includes("dark")) {
+        html.classList.add("dark-mode");
+    } else {
+        html.classList.add("light-mode");
+    }
+
+    // For some reason, class="dark-mode" gets added back once a AJAX loading takes place. I have no idea who is doing that! The browser?!
+    setTimeout(updateColorSchemeClass, 100);
+}
+
+document.addEventListener("DOMContentLoaded", updateColorSchemeClass);

@@ -121,7 +121,7 @@
         'danielmarschall/php_utils' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '8a051046b244e32b61dee0dfbeef27f932a61d33',
+            'reference' => '6bafcfe9dfc25c8c0951c6774741a5dcb6a13512',
             'type' => 'library',
             'install_path' => __DIR__ . '/../danielmarschall/php_utils',
             'aliases' => array(
@@ -263,7 +263,7 @@
         'phpseclib/phpseclib' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '8c3b39377e0db93dc51dd308123891f2cc7703fc',
+            'reference' => '6a5a0c64571dbd86a417ba342e1bdd6bc85171cb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpseclib/phpseclib',
             'aliases' => array(
@@ -319,9 +319,9 @@
             'dev_requirement' => false,
         ),
         'tinymce/tinymce' => array(
-            'pretty_version' => '8.7.0',
-            'version' => '8.7.0.0',
-            'reference' => '147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f',
+            'pretty_version' => '8.8.0',
+            'version' => '8.8.0.0',
+            'reference' => '23137d1b2f95cdd68f304292685157ba090e7518',
             'type' => 'component',
             'install_path' => __DIR__ . '/../tinymce/tinymce',
             'aliases' => array(),
@@ -330,7 +330,7 @@
         'twbs/bootstrap' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'b37afd77f69b97ae67722a9c3edb5ec5339544f3',
+            'reference' => 'e8c978daefe39540c67a82fdd72dfc0c4a267ff1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../twbs/bootstrap',
             'aliases' => array(
