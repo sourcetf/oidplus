@@ -3,6 +3,14 @@
 		"dummy": "<?php die('For security reasons, this file can only be accessed locally (without PHP).'.base64_decode('IgogICAgfQpdCg==')); ?>"
 	},
 	{
+		"version": "2.0.3.2",
+		"date": "2026-07-15 18:25:00 +0200",
+		"author": "Daniel Marschall (ViaThinkSoft)",
+		"changes": [
+			"Fix some minor issues"
+		]
+	},
+	{
 		"version": "2.0.3.1",
 		"date": "2026-07-11 11:50:00 +0200",
 		"author": "Daniel Marschall (ViaThinkSoft)",

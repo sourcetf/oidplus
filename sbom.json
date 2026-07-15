@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bom xmlns="http://cyclonedx.org/schema/bom/1.5" version="1" serialNumber="urn:uuid:4e59a42a-eba3-4d0c-a17b-c0fcc48bd264">
+<bom xmlns="http://cyclonedx.org/schema/bom/1.5" version="1" serialNumber="urn:uuid:121530db-6b77-42b4-83df-6f98c89cb7a9">
   <metadata>
-    <timestamp><![CDATA[2026-07-11T20:29:09Z]]></timestamp>
+    <timestamp><![CDATA[2026-07-15T16:23:46Z]]></timestamp>
     <tools>
       <tool>
         <name><![CDATA[composer]]></name>
@@ -66,18 +66,18 @@
         </externalReferences>
       </tool>
     </tools>
-    <component type="application" bom-ref="danielmarschall/oidplus-2.0.3.1">
+    <component type="application" bom-ref="danielmarschall/oidplus-2.0.3.2">
       <author><![CDATA[Daniel Marschall]]></author>
       <group><![CDATA[danielmarschall]]></group>
       <name><![CDATA[oidplus]]></name>
-      <version><![CDATA[2.0.3.1]]></version>
+      <version><![CDATA[2.0.3.2]]></version>
       <description><![CDATA[OIDplus 2.0]]></description>
       <licenses>
         <license>
           <id><![CDATA[Apache-2.0]]></id>
         </license>
       </licenses>
-      <purl><![CDATA[pkg:composer/danielmarschall/oidplus@2.0.3.1]]></purl>
+      <purl><![CDATA[pkg:composer/danielmarschall/oidplus@2.0.3.2]]></purl>
       <externalReferences>
         <reference type="website">
           <url><![CDATA[https://www.oidplus.com/]]></url>
@@ -476,12 +476,12 @@
       <purl><![CDATA[pkg:composer/danielmarschall/php_utils@dev-master]]></purl>
       <externalReferences>
         <reference type="distribution">
-          <url><![CDATA[https://api.github.com/repos/danielmarschall/php_utils/zipball/8a051046b244e32b61dee0dfbeef27f932a61d33]]></url>
-          <comment><![CDATA[dist reference: 8a051046b244e32b61dee0dfbeef27f932a61d33]]></comment>
+          <url><![CDATA[https://api.github.com/repos/danielmarschall/php_utils/zipball/6bafcfe9dfc25c8c0951c6774741a5dcb6a13512]]></url>
+          <comment><![CDATA[dist reference: 6bafcfe9dfc25c8c0951c6774741a5dcb6a13512]]></comment>
         </reference>
         <reference type="vcs">
           <url><![CDATA[https://github.com/danielmarschall/php_utils.git]]></url>
-          <comment><![CDATA[source reference: 8a051046b244e32b61dee0dfbeef27f932a61d33]]></comment>
+          <comment><![CDATA[source reference: 6bafcfe9dfc25c8c0951c6774741a5dcb6a13512]]></comment>
         </reference>
         <reference type="website">
           <url><![CDATA[https://www.viathinksoft.com/projects/php_utils]]></url>
@@ -497,8 +497,8 @@
         </reference>
       </externalReferences>
       <properties>
-        <property name="cdx:composer:package:distReference"><![CDATA[8a051046b244e32b61dee0dfbeef27f932a61d33]]></property>
-        <property name="cdx:composer:package:sourceReference"><![CDATA[8a051046b244e32b61dee0dfbeef27f932a61d33]]></property>
+        <property name="cdx:composer:package:distReference"><![CDATA[6bafcfe9dfc25c8c0951c6774741a5dcb6a13512]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[6bafcfe9dfc25c8c0951c6774741a5dcb6a13512]]></property>
         <property name="cdx:composer:package:type"><![CDATA[library]]></property>
       </properties>
     </component>
@@ -985,12 +985,12 @@
       <purl><![CDATA[pkg:composer/phpseclib/phpseclib@dev-master]]></purl>
       <externalReferences>
         <reference type="distribution">
-          <url><![CDATA[https://api.github.com/repos/phpseclib/phpseclib/zipball/8c3b39377e0db93dc51dd308123891f2cc7703fc]]></url>
-          <comment><![CDATA[dist reference: 8c3b39377e0db93dc51dd308123891f2cc7703fc]]></comment>
+          <url><![CDATA[https://api.github.com/repos/phpseclib/phpseclib/zipball/6a5a0c64571dbd86a417ba342e1bdd6bc85171cb]]></url>
+          <comment><![CDATA[dist reference: 6a5a0c64571dbd86a417ba342e1bdd6bc85171cb]]></comment>
         </reference>
         <reference type="vcs">
           <url><![CDATA[https://github.com/phpseclib/phpseclib.git]]></url>
-          <comment><![CDATA[source reference: 8c3b39377e0db93dc51dd308123891f2cc7703fc]]></comment>
+          <comment><![CDATA[source reference: 6a5a0c64571dbd86a417ba342e1bdd6bc85171cb]]></comment>
         </reference>
         <reference type="website">
           <url><![CDATA[https://phpseclib.com/]]></url>
@@ -1006,8 +1006,8 @@
         </reference>
       </externalReferences>
       <properties>
-        <property name="cdx:composer:package:distReference"><![CDATA[8c3b39377e0db93dc51dd308123891f2cc7703fc]]></property>
-        <property name="cdx:composer:package:sourceReference"><![CDATA[8c3b39377e0db93dc51dd308123891f2cc7703fc]]></property>
+        <property name="cdx:composer:package:distReference"><![CDATA[6a5a0c64571dbd86a417ba342e1bdd6bc85171cb]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[6a5a0c64571dbd86a417ba342e1bdd6bc85171cb]]></property>
         <property name="cdx:composer:package:type"><![CDATA[library]]></property>
       </properties>
     </component>
@@ -1165,38 +1165,38 @@
         <property name="cdx:composer:package:type"><![CDATA[library]]></property>
       </properties>
     </component>
-    <component type="library" bom-ref="tinymce/tinymce-8.7.0.0">
+    <component type="library" bom-ref="tinymce/tinymce-8.8.0.0">
       <group><![CDATA[tinymce]]></group>
       <name><![CDATA[tinymce]]></name>
-      <version><![CDATA[8.7.0]]></version>
+      <version><![CDATA[8.8.0]]></version>
       <description><![CDATA[Web based JavaScript HTML WYSIWYG editor control.]]></description>
       <licenses>
         <license>
           <name><![CDATA[SEE LICENSE IN license.md]]></name>
         </license>
       </licenses>
-      <purl><![CDATA[pkg:composer/tinymce/tinymce@8.7.0]]></purl>
+      <purl><![CDATA[pkg:composer/tinymce/tinymce@8.8.0]]></purl>
       <externalReferences>
         <reference type="distribution">
-          <url><![CDATA[https://api.github.com/repos/tinymce/tinymce-dist/zipball/147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></url>
-          <comment><![CDATA[dist reference: 147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></comment>
+          <url><![CDATA[https://api.github.com/repos/tinymce/tinymce-dist/zipball/23137d1b2f95cdd68f304292685157ba090e7518]]></url>
+          <comment><![CDATA[dist reference: 23137d1b2f95cdd68f304292685157ba090e7518]]></comment>
         </reference>
         <reference type="vcs">
           <url><![CDATA[https://github.com/tinymce/tinymce-dist.git]]></url>
-          <comment><![CDATA[source reference: 147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></comment>
+          <comment><![CDATA[source reference: 23137d1b2f95cdd68f304292685157ba090e7518]]></comment>
         </reference>
         <reference type="website">
           <url><![CDATA[https://www.tiny.cloud/]]></url>
           <comment><![CDATA[as detected from Composer manifest 'homepage']]></comment>
         </reference>
         <reference type="vcs">
-          <url><![CDATA[https://github.com/tinymce/tinymce-dist/tree/8.7.0]]></url>
+          <url><![CDATA[https://github.com/tinymce/tinymce-dist/tree/8.8.0]]></url>
           <comment><![CDATA[as detected from Composer manifest 'support.source']]></comment>
         </reference>
       </externalReferences>
       <properties>
-        <property name="cdx:composer:package:distReference"><![CDATA[147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></property>
-        <property name="cdx:composer:package:sourceReference"><![CDATA[147b97ffe8a7ccb8ea004aa0999d420d6bc27a6f]]></property>
+        <property name="cdx:composer:package:distReference"><![CDATA[23137d1b2f95cdd68f304292685157ba090e7518]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[23137d1b2f95cdd68f304292685157ba090e7518]]></property>
         <property name="cdx:composer:package:type"><![CDATA[component]]></property>
       </properties>
     </component>
@@ -1214,12 +1214,12 @@
       <purl><![CDATA[pkg:composer/twbs/bootstrap@dev-main]]></purl>
       <externalReferences>
         <reference type="distribution">
-          <url><![CDATA[https://api.github.com/repos/twbs/bootstrap/zipball/b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></url>
-          <comment><![CDATA[dist reference: b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></comment>
+          <url><![CDATA[https://api.github.com/repos/twbs/bootstrap/zipball/e8c978daefe39540c67a82fdd72dfc0c4a267ff1]]></url>
+          <comment><![CDATA[dist reference: e8c978daefe39540c67a82fdd72dfc0c4a267ff1]]></comment>
         </reference>
         <reference type="vcs">
           <url><![CDATA[https://github.com/twbs/bootstrap.git]]></url>
-          <comment><![CDATA[source reference: b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></comment>
+          <comment><![CDATA[source reference: e8c978daefe39540c67a82fdd72dfc0c4a267ff1]]></comment>
         </reference>
         <reference type="website">
           <url><![CDATA[https://getbootstrap.com/]]></url>
@@ -1235,8 +1235,8 @@
         </reference>
       </externalReferences>
       <properties>
-        <property name="cdx:composer:package:distReference"><![CDATA[b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></property>
-        <property name="cdx:composer:package:sourceReference"><![CDATA[b37afd77f69b97ae67722a9c3edb5ec5339544f3]]></property>
+        <property name="cdx:composer:package:distReference"><![CDATA[e8c978daefe39540c67a82fdd72dfc0c4a267ff1]]></property>
+        <property name="cdx:composer:package:sourceReference"><![CDATA[e8c978daefe39540c67a82fdd72dfc0c4a267ff1]]></property>
         <property name="cdx:composer:package:type"><![CDATA[library]]></property>
       </properties>
     </component>
@@ -1371,18 +1371,18 @@
     </dependency>
     <dependency ref="symfony/polyfill-mbstring-1.9999999.9999999.9999999-dev"/>
     <dependency ref="symfony/polyfill-php82-1.9999999.9999999.9999999-dev"/>
-    <dependency ref="tinymce/tinymce-8.7.0.0"/>
+    <dependency ref="tinymce/tinymce-8.8.0.0"/>
     <dependency ref="twbs/bootstrap-dev-main"/>
     <dependency ref="tweeb/tinymce-i18n-dev-master"/>
     <dependency ref="vakata/jstree-dev-master">
       <dependency ref="components/jquery-dev-master"/>
     </dependency>
-    <dependency ref="danielmarschall/oidplus-2.0.3.1">
+    <dependency ref="danielmarschall/oidplus-2.0.3.2">
       <dependency ref="components/jquery-dev-master"/>
       <dependency ref="components/jqueryui-dev-master"/>
       <dependency ref="matthiasmullie/minify-dev-master"/>
       <dependency ref="firebase/php-jwt-dev-main"/>
-      <dependency ref="tinymce/tinymce-8.7.0.0"/>
+      <dependency ref="tinymce/tinymce-8.8.0.0"/>
       <dependency ref="dcodeio/bcrypt.js-2.4.3.0"/>
       <dependency ref="danielmarschall/vnag-dev-master"/>
       <dependency ref="danielmarschall/uuid_mac_utils-dev-master"/>
